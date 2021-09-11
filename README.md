@@ -160,7 +160,7 @@ Example:
 // Declaring and assigning a value
 char endLine = '\n';
 ```
-**Why is the size of char is 2 byte in Java?** <br/>
+### **Why is the size of char is 2 byte in Java?** <br/>
 In other languages like C/C++ uses only ASCII characters and to represent all ASCII characters 8-bits is enough, 
 But java uses the Unicode system not the ASCII code system and to represent Unicode system 8 bit is not enough to represent all characters so Java uses 2 bytes for characters.<br/>
 ***Unicode** defines a fully international character set that can represent most of the world’s written languages. It is a unification of dozens of character sets, such as Latin, Greeks, Cyrillic, Katakana, Arabic, and many more.*
