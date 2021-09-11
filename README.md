@@ -164,13 +164,13 @@ char endLine = '\n';
 In other languages like C/C++ uses only ASCII characters and to represent all ASCII characters 8-bits is enough, 
 But java uses the Unicode system not the ASCII code system and to represent Unicode system 8 bit is not enough to represent all characters so Java uses 2 bytes for characters.<br/>
 ***Unicode** defines a fully international character set that can represent most of the world’s written languages. It is a unification of dozens of character sets, such as Latin, Greeks, Cyrillic, Katakana, Arabic, and many more.*
-
+---
 <br/>
 
 [1]: https://en.wikipedia.org/wiki/IEEE_floating_point
 [2]: http://docs.oracle.com/javase/1.5.0/docs/api/java/math/BigDecimal.html
 [3]: https://www.geeksforgeeks.org/rounding-off-errors-java/
----
+
 <br/>
 
 
