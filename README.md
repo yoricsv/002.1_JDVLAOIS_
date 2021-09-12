@@ -357,6 +357,436 @@ String str = new String("Hello, world!");
 ## <p align=center><b>Loops</b></p>
 # 
 
+Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true. <br/>
+Java provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.
+<br/>
+
+
+## [WHILE loop][26]
+A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be thought of as a repeating if statement.
+
+[26]: https://www.geeksforgeeks.org/java-while-loop-with-examples/
+
+Syntax:
+```java
+while (boolean condition)
+{
+   ... statement(s) ...
+}
+```
+
+Flowchart:
+![While Loop](https://media.geeksforgeeks.org/wp-content/uploads/Loop1.png)
+
+* While loop starts with the checking of condition. If it evaluated to true, then the loop body statements are executed otherwise first statement following the loop is executed. For this reason it is also called **Entry control loop**
+* Once the condition is evaluated to true, the statements in the loop body are executed. Normally the statements contain an update value for the variable being processed for the next iteration.
+* When the condition becomes false, the loop terminates which marks the end of its life cycle.
+
+Example:
+```java
+public class WhileLoop
+{
+    public static void main(String... args)
+    {
+        int i = 1;
+          
+        while (i < 4) // Exit when "i" becomes 4
+        {
+            System.out.println(
+                "Value of I is: " + i // Output: 1, 2, 3
+            );
+              
+            i++; // IMPORTANT!!! Without the loop can't finised!
+        }
+    }
+}
+```
+<br/>
+
+
+## [FOR Loop][27]
+
+A for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the initialization, condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping.
+
+[27]: https://www.geeksforgeeks.org/java-for-loop-with-examples/
+
+Syntax:
+```java
+for ( initialization condition;
+      testing condition;
+      increment/decrement)
+{
+   ... statement(s) ...
+}
+```
+
+Flowchart:
+![For Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop2.png)
+
+1. **Initialization condition:** Here, we initialize the variable in use. It marks the start of a for loop. An already declared variable can be used or a variable can be declared, local to loop only.
+2. **Testing Condition:** It is used for testing the exit condition for a loop. It must return a boolean value. It is also an *Entry Control Loop* as the condition is checked prior to the execution of the loop statements.
+3. **Statement execution:** Once the condition is evaluated to true, the statements in the loop body are executed.
+4. **Increment / Decrement:** It is used for updating the variable for next iteration.
+5. **Loop termination:** When the condition becomes false, the loop terminates marking the end of its life cycle.
+
+Example:
+```java
+public class ForLoop
+{
+    public static void main(String... args)
+    {
+        // loop starts from 1 to 3
+        for (int i = 1; i < 4; i++)
+            System.out.println(
+                "Value of I is: " + i // Output: 1, 2, 3
+            );
+
+    }
+}
+```
+
+**Enhanced FOR loop**
+
+Java also includes another version of FOR loop. Enhanced FOR loop provides a simpler way to **iterate through** *the elements of a **collection*** or ***array***. It is inflexible and should be used only when there is a need to iterate through the elements in sequential manner without knowing the index of currently processed element.<br/>
+Also note that the *object/variable* **is immutable** when enhanced for loop is used i.e it ensures that the values in the array can not be modified, so it can be said as read only loop where you can’t update the values as opposite to other loops where values can be modified.<br/>
+We recommend using this form of the for statement instead of the general form whenever possible.(as per JAVA doc.)
+
+Syntax:
+```java
+for (T element:Collection obj/array)
+{
+   ... statement(s) ...
+}
+```
+
+Lets take an example to demonstrate how enhanced for loop can be used to simpify the work. Suppose there is an array of names and we want to print all the names in that array. Let’s see the difference with these two examples.
+
+Example:
+```java
+public class EnhancedForLoop
+{
+    public static void main(String... args)
+    {
+        String[] array = {
+                    "Ron",
+                    "Harry",
+                    "Hermoine"
+                };
+  
+        for (String i:array)
+        {
+            System.out.println(i);          // Output: Ron, Harry, Hermoine
+        }
+  
+        // the same function
+        for ( int i = 0;
+                  i < array.length;
+                  i++)
+        {
+            System.out.println(array[i]);   // Output: Ron, Harry, Hermoine
+        }
+    }
+}
+```
+
+
+## [FOR-EACH Loop][28]
+
+A For-each is another array traversing technique like for loop, while loop, do-while loop introduced in Java5. 
+ 
+* It starts with the keyword for like a normal for-loop.
+* Instead of declaring and initializing a loop counter variable, you declare a variable that is the same type as the base type of the array, followed by a colon, which is then followed by the array name.
+* In the loop body, you can use the loop variable you created rather than using an indexed array element. 
+* It’s commonly used to iterate over an array or a Collections class (eg, ArrayList)
+
+[28]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/
+
+
+Syntax:
+```java
+for (T var : array) 
+{ 
+    ... statement(s) using var;
+}
+```
+Is equivalent to:
+```java
+for ( int i = 0; 
+          i < arr.length;
+          i++) 
+{ 
+    T var = arr[i];
+
+    ... statement(s) using var;
+}
+```
+
+Example:
+```java
+public class ForEachLoop    
+{
+    public static void main(String... arg)
+    {
+        {
+            int[] marks = {
+                    125,
+                    132,
+                    95,
+                    116,
+                    110
+                };
+             
+            int highest_marks = maximum(marks);
+
+            System.out.println(
+                "The highest score is " + highest_marks // Output: 132
+            );
+        }
+    }
+    
+    public static int maximum(int[] numbers)
+    {
+        int maxSoFar = numbers[0];
+         
+        // for each loop
+        for (int num : numbers)
+        {
+            if (num > maxSoFar)
+                maxSoFar = num;
+        }
+
+    return maxSoFar;
+    }
+}
+```
+
+## Limitations of FOR-EACH loop 
+
+1. For-each loops **arn't appropriate when you want to modify the array**:
+```java
+for (int num : marks) 
+{
+    // only changes num, NOT THE ARRAY ELEMENT
+    num = num * 2; 
+}
+```
+2. For-each loops **don't keep track of index**. So we can not obtain array index using For-Each loop 
+```java
+for (int num : numbers) 
+{ 
+    if (num == target) 
+    {
+        return ???;   // DON'T KNOW THE INDEX of num
+    }
+}
+```
+3. For-each **only iterates forward over the array in single steps**
+```java
+// CAN'T BE CONVERTED TO A FOR-EACH loop
+for ( int i = numbers.length - 1;
+          i > 0;
+          i--) 
+{
+      System.out.println(numbers[i]);
+}
+```
+4. For-each **can't process two decision making statements** at once 
+```java
+// CAN'T BE EASILY CONVERTED TO A FOR-EACH loop
+for ( int i = 0;
+          i < numbers.length;
+          i++) 
+{
+    if (numbers[i] == arr[i]) 
+    {
+        ... statement(s) ...
+    } 
+}
+```
+5.  For-each also has some **performance overhead** over simple iteration: 
+```java
+import java.io.*;
+import java.util.*;
+ 
+public class PerformanceOverhead
+{
+    public static void main (String... args)
+    {
+        List<Integer> list       = new ArrayList<>();
+        long          startTime;
+        long          endTime;
+
+        for ( int i = 0;
+                  i < 1000000;
+                  i++) 
+            list.add(i);
+
+
+        // Type 1
+        startTime = Calendar.getInstance().getTimeInMillis();
+
+        for (int i : list)
+            int a = i;
+
+        endTime   = Calendar.getInstance().getTimeInMillis();
+
+        System.out.println(
+            "For each loop : " + (endTime - startTime) + " ms"
+        );
+         
+
+        // Type 2
+        startTime = Calendar.getInstance().getTimeInMillis();
+
+        for ( int j = 0;
+                  j < list.size();
+                  j++)
+            int a = list.get(j);
+
+        endTime   = Calendar.getInstance().getTimeInMillis();
+
+        System.out.println(
+            "Using collection.size() : " + (endTime - startTime) + " ms"
+        );
+
+
+        // Type 3
+        startTime = Calendar.getInstance().getTimeInMillis();
+
+         int size = list.size();
+
+        for ( int j = 0;
+                  j < size;
+                  j++)
+            int a = list.get(j);
+
+        endTime   = Calendar.getInstance().getTimeInMillis();
+
+        System.out.println(
+            "By calculating collection.size() first : " + (endTime - startTime) + " ms"
+        );
+     
+        // Type 4
+        startTime = Calendar.getInstance().getTimeInMillis();
+
+        for( int j = list.size() - 1;
+                 j >= 0;
+                 j--)
+            int a = list.get(j);
+
+        endTime = Calendar.getInstance().getTimeInMillis();
+
+        System.out.println(
+            "Using [int j = list.size(); j > size ; j--] : " + (endTime - startTime) + " ms"
+        );
+    }
+}
+```
+<br/>
+
+
+## [DO-WHILE Loop][28]
+
+A do while loop is similar to while loop with only difference that it checks for condition after executing the statements, and therefore is an example of Exit Control Loop.
+
+[28]: https://www.geeksforgeeks.org/java-do-while-loop-with-examples/
+
+
+Syntax:
+```java
+do
+{
+    ... statement(s) ...
+}
+while (boolean condition);
+```
+
+Flowchart:
+![Do-While Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop3.png)
+
+1. do while loop starts with the execution of the statement(s). There is no checking of any condition for the first time.
+2. After the execution of the statements, and update of the variable value, the condition is checked for true or false value. If it is evaluated to true, next iteration of loop starts.
+3. When the condition becomes false, the loop terminates which marks the end of its life cycle.
+4. It is important to note that the do-while loop will execute its statements atleast once before any condition is checked, and therefore is an example of exit control loop.
+
+Example:
+```java
+public class DoWhileLoop
+{
+    public static void main(String... args)
+    {
+        int i = 32;
+
+        do
+        {
+            System.out.println(
+                "Value of I is: " + i // Output: 32
+            );
+              
+            i++; // IMPORTANT!!! Without the loop can't finised!
+        }
+        while (i < 2);
+    }
+}
+```
+<br/>
+
+
+**Pitfalls of Loops**
+
+1. **Infinite loop:** One of the most common mistakes while implementing any sort of looping is that that it may not ever exit, that is the loop runs for infinite time. This happens when the condition fails for some reason.
+   
+Two examples of INFINITE LOOP:
+```java
+public class PitfallLoop
+{
+    public static void main(String... args)
+    {
+
+        for ( int i =  5;
+                  i != 0;   // correct condition is: i > 0
+                  i -= 2)
+        {
+            System.out.println(i);
+        }
+
+
+        int x = 5;
+        while (x == 5)
+        {
+            System.out.println("In the loop");
+
+            // Update statement ISN'T PROVIDED
+            // correct statement is: i++;
+        }
+    }
+}
+```
+
+2. **Another pitfall** is that you might be adding something into you collection object through loop and you can run out of memory. If you try and execute the below program, after some time, out of memory exception will be thrown.
+
+Example:
+```java
+import java.util.ArrayList;
+
+public class Integer1
+{
+    public static void main(String... args)
+    {
+        ArrayList<Integer> ar = new ArrayList<>();
+
+        for ( int i = 0;
+                  i < Integer.MAX_VALUE;
+                  i++)
+        {
+            ar.add(i); // Output: ERROR: OUT OF MEMORY (CAN'T REACH THE MAXIMUM VALUE !!!)
+
+            // Every time a NEW item is ADDED.
+            
+        }
+    }
+}
+```
 ---
 <br/>
 
@@ -364,12 +794,417 @@ String str = new String("Hello, world!");
 ## <p align=center><b>Operators</b></p>
 # 
 
+Java provides many types of operators which can be used according to the need. They are classified based on the functionality they provide.<br/>
+
+Some of the types are:
+1. [Arithmetic Operators][15]
+2. [Unary Operators][16]
+3. [Assignment Operator][17]
+4. [Relational Operators][18]
+5. [Logical Operators][19]
+6. [Ternary Operator][20]
+7. [Bitwise Operators][21]
+8. [Shift Operators][22]
+9. [instance of operator][23]
+10. [Precedence and Associativity][24]
+11. [Interesting Questions][25]
+
+[15]: https://www.geeksforgeeks.org/java-arithmetic-operators-with-examples/
+[16]: https://www.geeksforgeeks.org/java-unary-operator-with-examples/
+[17]: https://www.geeksforgeeks.org/java-assignment-operator-with-examples/
+[18]: https://www.geeksforgeeks.org/java-relational-operators-with-examples/
+[19]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
+[20]: https://www.geeksforgeeks.org/java-ternary-operator-with-examples/
+[21]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
+[22]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
+[23]: https://www.geeksforgeeks.org/java-instanceof-and-its-applications/
+[24]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
+[25]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
+
+
+**Arithmetic Operators:** They are used to perform simple arithmetic operations on primitive data types.
+
+Symbol | Operator 
+  ---: | :---
+\*     | Multiplication
+\/     | Division
+%      | Modulo
+\+     | Addition
+–      | Subtraction
+<br/>
+
+
+**Unary Operators:** Unary operators need only one operand. They are used to increment, decrement or negate a value.
+
+Symbol | Operator 
+  ---: | :---
+–      | **Unary minus**, used for negating the values.
+\+     | **Unary plus**, indicates positive value (numbers are positive without this, however). It performs an automatic conversion to int when the type of its operand is byte, char, or short. This is called unary numeric promotion.
+++     | **Increment operator**, used for incrementing the value by 1. There are two varieties of increment operator.<br/> *Post-Increment:* Value is first used for computing the result and then incremented.<br/> *Pre-Increment:* Value is incremented first and then result is computed.
+--     | **Decrement operator**, used for decrementing the value by 1. There are two varieties of decrement operator.<br/> *Post-decrement:* Value is first used for computing the result and then decremented.<br/> *Pre-Decrement:* Value is decremented first and then result is computed.
+!      | **Logical NOT operator**, used for inverting a boolean value.
+<br/>
+
+
+**Assignment Operator:** The operator is used to assign a value to any variable. It has a right to left associativity, i.e value given on right hand side of operator is assigned to the variable on the left and therefore right hand side value must be declared before using it or should be a constant.
+
+Symbol | Operator 
+  ---: | :---
+=      | Assignment operator
+<br/>
+
+General format of assignment:
+```java
+variable = value;
+```
+In many cases assignment operator can be combined with other operators to build a shorter version of statement called Compound Statement.
+<br/>
+
+For example:
+```java
+// instead of
+a = a + 5;
+// we can use
+a += 5;
+```
+
+Symbol | Operator 
+  ---: | :---
++=     | **adding left operand** with right operand and then assigning it to variable on the left.
+-=     | **subtracting left operand** with right operand and then assigning it to variable on the left.
+*=     | **multiplying left operand** with right operand and then assigning it to variable on the left.
+/=     | **dividing left operand** with right operand and then assigning it to variable on the left.
+%=     | **assigning modulo of left operand** with right operand and then assigning it to variable on the left.
+<br/>
+
+
+**Relational Operators:** These operators are used to check for relations like equality, greater than, less than. They return boolean result after the comparison and are extensively used in looping statements as well as conditional if else statements.
+
+General format is: 
+```
+variable relationOperator value
+```
+
+Some of the relational operators are:
+Symbol | Operator 
+  ---: | :--- 
+==     | **Equal to:** returns true if left hand side is equal to right hand side.
+!=     | **Not Equal to:** returns true if left hand side is not equal to right hand side.
+<      | **less than:** returns true if left hand side is less than right hand side.
+<=     | **less than or equal to:** returns true if left hand side is less than or equal to right hand side.
+\>     | **Greater than:** returns true if left hand side is greater than right hand side.
+\>=    | **Greater than or equal to:** returns true if left hand side is greater than or equal to right hand side.
+<br/>
+
+
+**Logical Operators:** These operators are used to perform “logical AND” and “logical OR” operation, i.e. the function similar to AND gate and OR gate in digital electronics. One thing to keep in mind is the second condition is not evaluated if the first one is false, i.e. it has a short-circuiting effect. Used extensively to test for several conditions for making a decision.
+
+Conditional operators are:
+Symbol | Operator 
+  ---: | :--- 
+&&     | **Logical AND:** returns true when both conditions are true.
+\|\|   | **Logical OR:** returns true if at least one condition is true.
+<br/>
+
+
+**Ternary operator:** Ternary operator is a shorthand version of *IF-ELSE statement*. It has three operands and hence the name ternary. 
+
+General format is: 
+```
+condition ? if true : if false
+```
+
+The above statement means that IF the condition evaluates to TRUE, then *execute* the statements *after* the **"?"** else *execute* the statements *after* the **":"**. 
+
+Example:
+```java
+public class TernaryOperators
+{
+    public static void main(String... args)
+    {
+        int a = 20,
+            b = 10,
+            c = 30,
+            result;
+ 
+        result = (
+            (a > b) ?
+                (a > c) ? a : c
+            :
+                (b > c) ? b : c
+        );
+        
+        System.out.println(
+            "Max of three numbers is: " + result    // Output: 30
+        );
+    }
+}
+```
+<br/>
+
+
+**Bitwise Operators:** These operators are used to perform manipulation of individual bits of a number. They can be used with any of the integer types. They are used when performing update and query operations of Binary indexed tree.
+
+Symbol | Operator 
+  ---: | :--- 
+&      | **Bitwise AND operator:** returns bit by bit AND of input values.
+\|     | **Bitwise OR operator:** returns bit by bit OR of input values.
+^      | **Bitwise XOR operator:** returns bit by bit XOR of input values.
+~      | **Bitwise Complement Operator:** This is a unary operator which returns the one’s compliment representation of the input value, i.e. with all bits inversed.
+<br/>
+
+
+**Shift Operators:** These operators are used to shift the bits of a number left or right thereby multiplying or dividing the number by two respectively. They can be used when we have to multiply or divide a number by two. 
+
+General format is: 
+```
+number shiftOperator numberOfPlacesToShift;
+```
+Example: 
+```java
+number << 1; // Each step multiply the value of 2 (the same as: number *= 2;)
+
+number >> 4; // Each step divide the value of 2   (the same as: number := 8;)
+```
+Symbol | Operator 
+  ---: | :--- 
+<<     | **Left shift operator:** shifts the bits of the number to the left and fills 0 on voids left as a result. Similar effect as of multiplying the number with some power of two.
+\>\>   | **Signed Right shift operator:** shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit depends on the sign of initial number. Similar effect as of dividing the number with some power of two.
+\>\>\> | **Unsigned Right shift operator:** shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit is set to 0.
+<br/>
+
+
+**Instance of operator:** Instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface.
+
+General format is: 
+```java
+object instanceof class/subclass/interface
+```
+Example:
+```java
+class InstanceOperators
+{
+    public static void main(String... args)
+    {
+        Person obj1 = new Person();
+        Person obj2 = new Boy();
+ 
+        // As obj is of type person, it is not an instance of Boy or interface
+        System.out.println(
+            "obj1 instanceof Person: "      + (obj1 instanceof Person)      // Output: true
+        );
+        System.out.println(
+            "obj1 instanceof Boy: "         + (obj1 instanceof Boy)         // Output: false
+        );
+        System.out.println(
+            "obj1 instanceof MyInterface: " + (obj1 instanceof MyInterface) // Output: false
+        );
+ 
+        // Since obj2 is of type boy, whose parent class is person and it implements the 
+        // interface Myinterface it is instance of all of these classes
+        System.out.println(
+            "obj2 instanceof Person: "      + (obj2 instanceof Person)      // Output: true
+        );
+        System.out.println(
+            "obj2 instanceof Boy: "         + (obj2 instanceof Boy)         // Output: true
+        );
+        System.out.println(
+            "obj2 instanceof MyInterface: " + (obj2 instanceof MyInterface) // Output: true
+        );
+    }
+}
+ 
+class Person
+{
+
+}
+ 
+class Boy extends Person implements MyInterface
+{
+
+}
+ 
+interface MyInterface
+{
+
+}
+```
+<br/>
+
+
+**Precedence and Associativity of Operators**
+
+Precedence and associative rules are used when dealing with hybrid equations involving more than one type of operator. In such cases, these rules determine which part of the equation to consider first as there can be many different valuations for the same equation. The below table depicts the precedence of operators in decreasing order as magnitude with the top representing the highest precedence and bottom shows the lowest precedence.
+
+![Associativity](https://media.geeksforgeeks.org/wp-content/uploads/operators.png)
+
+<br/>
+
+
+**Interesting Questions on Operators**
+
+**Precedence and Associativity:** There is often a confusion when it comes to hybrid equations that is equations having multiple operators. The problem is which part to solve first. There is a golden rule to follow in these situations. If the operators have different precedence, solve the higher precedence first. If they have same precedence, solve according to associativity, that is either from right to left or from left to right. Explanation of below program is well written in comments withing the program itself.
+
+Example:
+```java
+public class PrecAndAssociatRules
+{
+    public static void main(String... args)
+    {
+        int a = 20,
+            b = 10,
+            c = 0,
+            d = 20,
+            e = 40,
+            f = 30;
+ 
+    /*
+        * PRECEDENCE RULES
+        * (if work will be next:)
+        * First  step: B / D = 10 / 20 = 0.5
+        * Second step: result(B/D) + A = 0.5 + 20 = 20.5 -> (int) -> 20
+    */
+        System.out.println(
+            "The result of A + B / D is: " + (a + b / d)                    // Output: 20
+        );
+ 
+    /*
+        * If the same precedence is followed as the associativity rules:
+        * First  step: B * D = 10 * 20 = 200
+        * Second step: E / F = 40 / 30 = 1.3(3)
+        * Third  step: A + result(B*D) = 20 + 200 = 220
+        * Fourth step: result(A+result(B*D)) - result(E/F) = 220 - 1.3(3) = 218.6(7) -> (int) -> 219
+    */ 
+        System.out.println(
+            "The result of A + B * D - E / F is: " + (a + b * d - e / f)    // Output: 219
+        );
+    }
+}
+```
+<br/>
+
+
+**Be a Compiler:** Compiler in our systems uses lex tool to match the greatest match when generating tokens. This creates a bit of a problem if overlooked.
+<br/>
+*For example*, consider the statement **A=B+++C;**, to many of the readers this might seem to create compiler error. But this statement is absolutely correct as the token created by lex are **A**, **=**, **B**, **++**, **+**, **C**.
+<br/>
+*Therefore* this statement has a similar effect of ***first assigning* B + C *to* A** and ***then incrementing* B**.
+<br/>
+*Similarly*, **A=B+++++C;** would generate error as tokens generated are **A**, **=**, **B**, **++**, **++**, **+**, **C** which IS actually AN ERROR as **there is no operand after second unary operand**. 
+
+Example:
+```java
+public class operators
+{
+    public static void main(String... args)
+    {
+        int a = 20,
+            b = 10,
+            c = 0;
+ 
+        // A=B+++C is compiled as B++ +C
+        // First  step: B + C = 10 + 0 = 10
+        // Second step: A = result(B+C) = 10
+        // Third  step: B = B + 1 = 10 + 1 = 11
+
+        System.out.println(
+            "The result of:"   +     "\n\t" +
+            "A = (B + C) is: " + a + "\n\t" +   // Output: 10
+            "B = (B + 1) is: " + b + "\n\t" +   // Output: 11
+            "C is: "           + c              // Output: 0
+        );
+ 
+        // A=B+++++C is compiled as  B++ ++ +C which GIVES ERROR!
+        // Uncommente the line below to check this
+
+        // System.out.println(b+++++c);
+    }
+}
+```
+<br/>
+
+
+**Using + over ():** When *using **+** operator inside system.out.println()* make sure to do addition using parenthesis.
+<br/>
+If we write something before doing addition, then string addition takes place, that is associativity of addition is left to right and hence integers are added to a string first producing a string, and string objects concatenate when using +, therefore it can create unwanted results. 
+
+Example:
+```java
+public class AdditionAndConcatenation
+{
+    public static void main(String... args)
+    {
+ 
+        int x = 5,
+            y = 8;
+ 
+        // A line will be printed, then added 5 and then 8 (no spaces),
+        // which will be concatenated into the next line:
+        // "Concatenation (X + Y) = 58"
+        System.out.println(
+            "Concatenation (X + Y) = "  + x + y
+        );  // Output: 58
+ 
+        System.out.println(
+            "Addition (X + Y) = "       + (x + y)
+        );   // Output: 13
+    }
+}
+```
 ---
 <br/>
 
 
-## <p align=center><b>If-Else operator</b></p>
+## <p align=center><b>IF-ELSE operator (Decision maker)</b></p>
 # 
+
+Decision Making in programming is similar to decision making in real life. In programming also we face some situations where we want a certain block of code to be executed when some condition is fulfilled.
+<br/>
+A programming language uses control statements to control the flow of execution of program based on certain conditions. These  are used to cause the flow of execution to advance and branch based on changes to the state of a program.
+<br/>
+
+**Java’s Selection statements:**
+* [if][30]
+* [if-else][31]
+* [nested-if][32]
+* [if-else-if][33]
+* [switch-case][34]
+* [jump][35] – break, continue, return
+
+[30]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if
+[31]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if-else
+[32]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#nested-if
+[33]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if-else-if
+[34]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#switch-case
+[35]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#jump
+
+These statements allow you to control the flow of your program’s execution based upon conditions known only during run time.
+
+[**if:**][36] The statement is the most simple decision making statement. It is used to decide whether a certain statement or block of statements will be executed or not i.e if a certain condition is true then a block of statement is executed otherwise not.
+
+[36]: https://www.geeksforgeeks.org/java-if-statement-with-examples/
+
+Syntax:
+```java
+if(boolean condition) 
+{
+   // Execute statements if condition is TRUE
+}
+```
+Here, **condition** after evaluation will be either TRUE or FALSE.
+<br/>
+if statement accepts boolean values – if the value is TRUE then it will execute the block of statements under it.
+<br/>
+If we don't provide the *curly braces* **"{"** and **"}"** after **if(***...condition...***)** then by default if statement will consider the immediate **one statement** to be inside its block.
+
+Example,
+```java
+if(condition)
+   statement1;  // Execute the statement1 ONLY if condition is TRUE
+   statement2;
+```
+
+
 
 ---
 <br/>
