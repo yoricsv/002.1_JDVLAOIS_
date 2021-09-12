@@ -4,13 +4,10 @@ public class Loops
     {
         short[] daysOfMonth = {31,28,31,30,31,30,31,31,30,31,30,31};
 
-
-        System.out.print(
-                "These numbers were displayed by Loop For:\n"
-        );
         String result = "";
 
-        // for loop
+
+        // FOR LOOP
         for(int i = 0; i < daysOfMonth.length; i++)
         {
             result += daysOfMonth[i];
@@ -21,19 +18,16 @@ public class Loops
                 result += ", ";
         }
 
-        System.out.print(
-                result +
-                "\n\n" +
-                "These numbers were displayed by For-Each Loop:\n"
-        );
-
-
-        // for-each loop
+        // FOR-EACH LOOP
         for(int i : daysOfMonth)
         {
-            System.out.print(i);
-            System.out.print(" ");
+            System.out.print(i + if(i.hasNext())?", ":".";);
         }
+
+        System.out.print(
+                "\nThese numbers were displayed by Loop FOR:\n" + result
+        );
+
 
     }
 }
