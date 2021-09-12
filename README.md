@@ -1188,7 +1188,7 @@ Syntax:
 ```java
 if(boolean condition) 
 {
-   // Execute statements if condition is TRUE
+   // Execute statements when condition is TRUE
 }
 ```
 Here, **condition** after evaluation will be either TRUE or FALSE.
@@ -1200,11 +1200,121 @@ If we don't provide the *curly braces* **"{"** and **"}"** after **if(***...cond
 Example,
 ```java
 if(condition)
-   statement1;  // Execute the statement1 ONLY if condition is TRUE
+   statement1;  // Execute the statement1 ONLY when condition is TRUE
    statement2;
 ```
+Flowchart:
+![IF](https://media.geeksforgeeks.org/wp-content/uploads/if.png)
+
+Example:
+```java
+public class IfDecisionMaker
+{
+    public static void main(String... args)
+    {
+        int i = 10;
+  
+        if (i > 15)
+            System.out.println(
+                "10 is less than 15" // Output: ...nothing...
+            );
+  
+        System.out.println(
+            "I am Not in if"  // Output: I am Not in if
+        );
+    }
+}
+```
+<br/>
 
 
+[**if-else:**][37] The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the else statement. We can use the else statement with if statement to execute a block of code when the condition is false.
+
+[37]: https://www.geeksforgeeks.org/java-if-else-statement-with-examples/
+
+Syntax:
+```java
+if(boolean condition) 
+{
+   ... statement(s) ... // Execute when condition is TRUE
+}
+else
+{
+    ... statement(s) ... // Execute when condition is FALSE
+}
+}
+```
+Flowchart:
+![IF-ELSE](https://media.geeksforgeeks.org/wp-content/uploads/if-else.png)
+
+Example:
+```java
+class IfElse
+{
+    public static void main(String... args)
+    {
+        int num = 10;
+  
+        if (num < 15)
+            System.out.println(
+                "NUM is smaller than 15" // Output: NUM is smaller than 15
+            );
+        else
+            System.out.println(
+                "NUM is greater than 15" // Output: ... nothing ...
+            );
+    }
+}
+```
+<br/>
+
+
+[**nested-if:**][32] A nested if is an if statement that is the target of another if or else. Nested if statements means an if statement inside an if statement. Yes, java allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement.
+
+Syntax:
+```java
+if(boolean condition) 
+{
+   ... statement(s) ... // Execute when condition is TRUE
+   if (boolean condition2) 
+   {
+      ... statement(s) ... // Executes when condition2 is TRUE
+   }
+}
+```
+Flowchart:
+![NESTED-IF](https://media.geeksforgeeks.org/wp-content/uploads/nested-if-modified-1.png)
+
+Example:
+```java
+public class NestedIf
+{
+    public static void main(String... args)
+    {
+        int i = 10;
+  
+        if (i == 10)
+        {
+            if (i < 15)
+                System.out.println(
+                    "i is smaller than 15"
+                );
+  
+            // Nested - if statement
+            // Will only be executed if statement above
+            // it is true
+            if (i < 12)
+                System.out.println(
+                    "i is smaller than 12 too"
+                );
+            else
+                System.out.println(
+                    "i is greater than 15"
+                );
+        }
+    }
+}
+```
 
 ---
 <br/>
