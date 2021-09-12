@@ -36,22 +36,28 @@ public class Array
                 "\nDisplaying the values of array arr[] "     +
                 "(declared and then allocated memory):"
         );
-        System.out.println(     arr[0]);
-        System.out.println(     arr[1]);
-        System.out.println(     arr[2]);
-        System.out.println(     arr[3]);
-        System.out.println(     arr[4]);
+        System.out.print(
+                arr[0] + "\n" +
+                arr[1] + "\n" +
+                arr[2] + "\n" +
+                arr[3] + "\n" +
+                arr[4] + "\n"
+        );
 
         // Displaying The Second variant
         System.out.println(
                 "\nDisplaying the values of array numbers[] " +
                 "(declared with memory allocation):"
         );
-        System.out.println(numbers[0]);
-        System.out.println(numbers[1]);
-        System.out.println(numbers[2]);
-        System.out.println(numbers[3]);
-        System.out.println(numbers[4]);
+
+        char endLine = '\n';
+        System.out.print(
+                numbers[0] + endLine +
+                numbers[1] + endLine +
+                numbers[2] + endLine +
+                numbers[3] + endLine +
+                numbers[4] + endLine
+        );
 
         // Displaying The Third variant
         System.out.println(
