@@ -11,69 +11,64 @@ The project scope:<br/>
 ---
 <br/>
 
-## <p align=center><b>Variables in Java</b></p>
-# 
+# <p align=center><b>Variables in Java</b></p>
 
 A variable is a name given to a memory location. It is the basic unit of storage in a program.
 
-Common features:
+### Common features:
 * The value stored in a variable can be changed during program execution.
 * A variable is only a name given to a memory location, all the operations done on the variable effects that memory location.
 * In Java, all the variables must be declared before use.
 
-**The declaration of variables:**
+### The declaration of variables:
 
 ![Variables](https://media.geeksforgeeks.org/wp-content/uploads/20191110223008/java-declare.jpeg)
 
 From the image, it can be easily perceived that while declaring a variable we need to take care of two things  that while de
 
+### **The declaration:**
 
-
-**The declaration:**
-
-**Datatype:** Type of data that can be stored in this variable.<br/>
-**Dataname:** Name given to the variable. 
-In this way, a name can only be given to a memory location. It can be assigned values in two ways: 
+***Datatype:*** Type of data that can be stored in this variable.<br/>
+***Dataname:*** Name given to the variable. In this way, a name can only be given to a memory location. It can be assigned values in two ways:
 
 * Variable Initialization
 * Assigning value by taking input
 
-
-
-**The initialization:**
+### **The initialization:**
 
 * **datatype:** Type of data that can be stored in this variable. 
 * **variable_name:** Name given to the variable. 
 * **value:** It is the initial value stored in the variable.
 
-
 ![Declaration](https://media.geeksforgeeks.org/wp-content/uploads/Variables-in-Java.png)
 
-
-Examples:
+#### Examples:
 ```java
-// Declaring float variable
+// Declaring
 float simpleInterest;
 
-// Declaring and Initializing integer variable
+// Declaring and Initializing
 int   time = 10,
      speed = 20;
 
-// Declaring and Initializing character variable
 char   var = 'h'; 
 ```
+
 ## **Different types of variables:**
+
 1. Local Variables
 2. Instance Variables
 3. Static Variables
 
 ### **Local** Variables
+
 A variable defined within a block or method or constructor is called a local variable. 
 * These variables are created when the block is entered or the function is called and destroyed after exiting from the block or when the call returns from the function.
 * The scope of these variables exists only within the block in which the variable is declared. i.e. we can access these variables only within that block.
 * Initialization of the local variable is mandatory before using it in the defined scope.
 
 ### **Instance** Variables
+
 Instance variables are non-static variables and are declared in a class outside any method, constructor and etc. 
 * As instance variables are declared in a class, these variables are created when an object of the class is created and destroyed when the object is destroyed.
 * Unlike local variables, we may use access specifiers for instance variables. If we do not specify any access specifier then the default access specifier will be used.
@@ -81,6 +76,7 @@ Instance variables are non-static variables and are declared in a class outside 
 * Instance Variable can be accessed only by creating objects.
 
 ### **Static** Variables
+
 Static variables are also known as Class variables. 
 * These variables are declared similarly as instance variables, the difference is that static variables are declared using the static keyword within a class outside any method constructor or block.
 * Unlike instance variables, we can only have one copy of a static variable per class irrespective of how many objects we create.
@@ -90,217 +86,196 @@ Static variables are also known as Class variables.
 * If we access the static variable without the class name, the compiler will automatically append the class name.
 
 ### Differences between the *Instance* and the *Static* variables
+
 * Each object will have its own copy of the instance variable whereas We can only have one copy of a static variable per class irrespective of how many objects we create.
 * Changes made in an instance variable using one object will not be reflected in other objects as each object has its own copy of the instance variable. In the case of static, changes will be reflected in other objects as static variables are common to all objects of a class.
 * We can access instance variables through object references and Static Variables can be accessed directly using class name.
 
-
-**Syntax:** Static and instance variables:
+#### **Syntax:** Static and instance variables:
 ```java
- // Static variable
-static int a;
-
-// Instance variable
-       int b; 
+static int a;   // Static variable
+       int b;   // Instance variable
 ```
+---
 <br/>
 
 
----
-## <p align=center>DataTypes</p>
-#
+# <p align=center><b>DataTypes</b></p>
 
 Java is a **statically and strongly typed language** because these functions are inherited from C and C++.
 
-Data Types in Java:
+### Data Types in Java:
 ![Data types in Java](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg)
----
+
 <br/>
 
-# Java has two categories of data: 
+### Java has two categories of data: 
  
-1. **Primitive Data Type**: such as *boolean, char, int, short, byte, long, float, and double*<br/>
+1. **Primitive Data Type**: such as *boolean, char, int, short, byte, long, float, and double*
 2. **Non-Primitive Data Type** or **Object Data type**: such as *String, Array and etc.*
 
 ![Data types in Java](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105122725/Primitive-Data-Types-in-Java-4.jpg)
+
 <br/>
 
-
-## <p align=center><b>Primitive Data Types</b></p>
-# 
+# Primitive Data Types
 
 Primitive data are only single values and have no special capabilities. 
 
 1. **boolean:** The data type represents only one bit of information either *true* or *false*, but the size of the boolean data type is virtual machine-dependent.<br/>
 **Default value:** *false*
 
-Basic syntax for declaring a boolean
+#### Syntax:
 ```java
 boolean <boolVariableName>;
 ```
-Example :
+
+#### Example:
 ```java
 // Declaring and assigning a value
 boolean flag = false;
 ```
 
-<br/>
-
 1. **byte:** The data type is an 8-bit signed integer. Useful for saving memory in large arrays.<br/> 
 **Default value:** *0*
 
-Basic syntax for declaring a byte
+#### Syntax:
 ```java
 byte <byteVariableName>;
 ```
-Example :
+
+#### Example:
 ```java
 // Declaring and assigning a value
 byte bVar = -128;
 ```
 
-<br/>
-
 1. **short:** The data type is a 16-bit signed integer. Useful for saving memory in large arrays such as byte.<br/> 
 **Default value:** *0*
 
-Basic syntax for declaring a short
+#### Syntax:
 ```java
 short <shortVariableName>;
 ```
-Example :
+#### Example:
 ```java
 // Declaring and assigning a value
 short shortVar = -15562;
 ```
 
-<br/>
-
 4. **int:** It is a 32-bit (4 Bytes) signed integer.<br/>
 **Default value:** *0* 
 
-Basic syntax for declaring a int
+#### Syntax:
 ```java
 int <integerVariableName>;
 ```
-Example :
+
+#### Example:
 ```java
 // Declaring and assigning a value
 int intVar = 89;
 ```
-*Note:* In Java SE 8 and later, we can use the int data type to represent an **unsigned** 32-bit integer, which has value in the range [0 ... 2<sup>32</sup> -1]. Use the **Integer class** to use int data type as an *unsigned integer*.
 
-<br/>
+> *Note:* In Java SE 8 and later, we can use the int data type to represent an **unsigned** 32-bit integer, which has value in the range [0 ... 2<sup>32</sup> -1]. Use the **Integer class** to use int data type as an *unsigned integer*.
 
 5. **long:** The data type is a 64-bit (8 Bytes) signed integer.<br/>
 **Default value:** *0* 
 
-Basic syntax for declaring a long
+#### Syntax:
 ```java
 long <longVariableName>;
 ```
-Example :
+#### Example:
 ```java
 // Declaring and assigning a value
 long longVar = -504588810;
 ```
-*Note:* In Java SE 8 and later, you can use the long data type to represent an **unsigned** 64-bit long, which has a minimum value of 0 and a maximum value of 2<sup>64</sup>-1. The **Long class** also contains methods like *comparing Unsigned*, *divide Unsigned* and etc. **to support arithmetic operations for unsigned long**.<br/>
 
-<br/>
+> *Note:* In Java SE 8 and later, you can use the long data type to represent an **unsigned** 64-bit long, which has a minimum value of 0 and a maximum value of 2<sup>64</sup>-1. The **Long class** also contains methods like *comparing Unsigned*, *divide Unsigned* and etc. **to support arithmetic operations for unsigned long**.
 
 6.  **float:** The data type is a single-precision 32-bit (4 Bytes) [IEEE 754][1] floating-point. Useful for saving memory (instead of double) in large arrays of floating-point numbers.<br/>
 **Default value:** *0.0* 
 
-
-Basic syntax for declaring a float
+#### Syntax:
 ```java
 float <floatVariableName>;
 ```
 
-<p align=center><b>:warning: BE CAREFULLY :warning:</b></p>
-
-> By *DEFAULT* in Java, the value of **real data types** is *DOUBLE*   
+> <p align=center>:warning: BE CAREFULLY :warning:</p>
+> ---
+> By *DEFAULT* in Java, the value of **real data types** is *DOUBLE* <br/>
 > Everywhere for the FLOAT values you have to use **f** as a suffix
 
-Example :
+#### Example:
 ```java
 // Declaring and assigning a value
 float floatVar = 4.7333434f;
 ```
-<br/>
 
 7.  **double:** The data type is a double-precision 64-bit (8 Bytes) [IEEE 754][1] floating-point.<br/> For **decimal values**, this data type is generally use by  DEFAULT.<br/>
 **Default value:** *0.0*
 
-Basic syntax for declaring a double
+#### Syntax:
 ```java
 double <doubleVariableName>;
 ```
-Example :
+#### Example :
 ```java
 // Declaring and assigning a value
 double doubleVar = -2454.355453532;
 ```
-*Note:* Both float and double data types were designed especially for scientific calculations, where approximation errors are acceptable.<br/> If precision is a top priority, it is *strongly recommended to use* the **[*BigDecimal*][2] class** instead of these primitive data type.<br/> Please see this for details: [*Rounding off errors in Java*][3]
-<br/>
+> *Note:* Both float and double data types were designed especially for scientific calculations, where approximation errors are acceptable.<br/>
+> If precision is a top priority, it is *strongly recommended to use* the **[*BigDecimal*][2] class** instead of these primitive data type.<br/>
+> Please see this for details: [*Rounding off errors in Java*][3]
 
 8.  **char:** The data type is a single 16-bit (2 Bytes) Unicode character (UNSIGNED). <br>
 **Default value:** *\u0000*
 
-Basic syntax for declaring a char
+#### Syntax:
 ```java
 char <charVariableName>;
 ```
->*Note:* The char data type may contain the escape consequences!
+> *Note:* The char data type may contain the escape consequences!
 
-Example:
+#### Example:
 ```java
 // Declaring and assigning a value
 char endLine = '\n';
 ```
+
 **Why is the size of char is 2 byte in Java?** <br/>
 In other languages like C/C++ uses only ASCII characters and to represent all ASCII characters 8-bits is enough, 
 But java uses the Unicode system not the ASCII code system and to represent Unicode system 8 bit is not enough to represent all characters so Java uses 2 bytes for characters.<br/>
 ***Unicode** defines a fully international character set that can represent most of the world’s written languages. It is a unification of dozens of character sets, such as Latin, Greeks, Cyrillic, Katakana, Arabic, and many more.*
 
----
-
-[1]: https://en.wikipedia.org/wiki/IEEE_floating_point
-[2]: http://docs.oracle.com/javase/1.5.0/docs/api/java/math/BigDecimal.html
-[3]: https://www.geeksforgeeks.org/rounding-off-errors-java/
-
 <br/>
 
-
-## <p align=center><b>Non-Primitive</b> Data Type or <b>Reference</b> Data Types</p>
-# 
+# **Non-Primitive** Data Type or **Reference** Data Types
 
 The **Reference Data Types** will contain a memory address of variable value because the reference types won’t store the variable value directly in memory. They are [*arrays*][4], [*strings*][5], [*class*][10], [*objects*][6], [*interface*][13], etc.
-
-[4]: https://github.com/yoricsv/002.1_JDVLAOIS_.git
-[5]: https://github.com/yoricsv/002.3_JStringRegExp_.git
-[6]: https://github.com/yoricsv/004.1_JCOIP_.git
 
 * [**String:**][4] Strings are defined as an array of characters. The difference between a character array and a string in Java is, the string is designed to hold a sequence of characters in a single variable whereas, a character array is a collection of separate char type entities.
 * Unlike C/C++, Java strings are not terminated with a *null* character.
 Below is the basic syntax for declaring a string in Java programming language.
 
-Syntax:
+#### Syntax:
 ```java
 <StringType> <stringName> = “<stringSequence>”;
 ```
 
-Example *(without memory allocation on the heap)*:
+#### Example *(without memory allocation on the heap)*:
 ```java
 // Declaring 
 String str = "Hello, world!";
 ```
 
-Example *(with memory allocation on the heap)*:
+#### Example *(with memory allocation on the heap)*:
 ```java
 // Declare String using new operator 
 String str = new String("Hello, world!"); 
 ```
+
 * [**Class:**][10] A class is a user-defined blueprint or prototype from which objects are created.  It represents the set of properties or methods that are common to all objects of one type. In general, class declarations can include these components, in order: 
    1. **Modifiers:** A class can be public or has default access (Refer [*this*][11] for details).
    2. **Class name:** The name should begin with a initial letter (capitalized by convention).
@@ -308,66 +283,532 @@ String str = new String("Hello, world!");
    4. **Interfaces (*if any*):** A comma-separated list of interfaces implemented by the class, if any, preceded by the keyword implements. A class can implement more than one interface.
    5. **Body:** The class body surrounded by braces, *{ }*.
 
-[10]: https://www.geeksforgeeks.org/classes-objects-java/
-[11]: https://www.geeksforgeeks.org/access-specifiers-for-classes-or-interfaces-in-java/
-
 * [**Object:**][12] It is a basic unit of Object-Oriented Programming and represents the real-life entities.  A typical Java program creates many objects, which as you know, interact by invoking methods. An object consists of : 
    1. **State:** It is represented by attributes of an object. It also reflects the properties of an object.
    2. **Behavior:** It is represented by methods of an object. It also reflects the response of an object with other objects.
    3. **Identity:** It gives a unique name to an object and enables one object to interact with other objects.
-
-[12]: https://www.geeksforgeeks.org/classes-objects-java/
 
 * [**Interface:**][13] Like a class, an interface can have methods and variables, but the methods declared in an interface are by default abstract (only method signature, nobody).   
    * Interfaces specify what a class must do and not how. It is the blueprint of the class.
    * An Interface is about capabilities like a Player may be an interface and any class implementing Player must be able to (or must implement) move(). So it specifies a set of methods that the class has to implement.
    * If a class implements an interface and does not provide method bodies for all functions specified in the interface, then the class must be declared abstract.
    * A Java library example is, [*Comparator Interface*][14]. If a class implements this interface, then it can be used to sort a collection.
----
 
+[1]: https://en.wikipedia.org/wiki/IEEE_floating_point
+[2]: http://docs.oracle.com/javase/1.5.0/docs/api/java/math/BigDecimal.html
+[3]: https://www.geeksforgeeks.org/rounding-off-errors-java/
+[4]: https://github.com/yoricsv/002.1_JDVLAOIS_.git
+[5]: https://github.com/yoricsv/002.3_JStringRegExp_.git
+[6]: https://github.com/yoricsv/004.1_JCOIP_.git
+[10]: https://www.geeksforgeeks.org/classes-objects-java/
+[11]: https://www.geeksforgeeks.org/access-specifiers-for-classes-or-interfaces-in-java/
+[12]: https://www.geeksforgeeks.org/classes-objects-java/
 [13]: https://www.geeksforgeeks.org/interfaces-in-java/
 [14]: https://www.geeksforgeeks.org/comparator-interface-java/
 
+---
 <br/>
 
-
-## <p align=center><b>Arrays</b></p>
-# 
+# <p align=center><b>Arrays</b></p> 
 
 * [**Array:**][4] An array is a group of like-typed variables that are referred to by a common name. Arrays in Java work differently than they do in C/C++. The following are some important points about Java arrays. 
-   * In Java, all arrays are dynamically allocated. (discussed below) 
- 
+   * In Java, all arrays are dynamically allocated.
    * Since arrays are objects in Java, we can find their length using member length. This is different from C/C++ where we find length using size.
    * A Java array variable can also be declared like other variables with [] after the data type.
    * The variables in the array are ordered and each has an index beginning from 0.
    * Java array can be also be used as a static field, a local variable or a method parameter.
    * The size of an array must be specified by an int value and not long or short.
    * The direct superclass of an array type is [Object][7].
-   
    * Every array type implements the interfaces [Cloneable][8] and [java.io.Serializable][9].
+
+Array can contain primitives (*int*, *char* and etc.) as well as object (or non-primitive) references of a *class* depending on the definition of the array.
+<br/>In case of **primitive** data types, the actual values are stored **in contiguous memory** locations. 
+<br/>In case of objects of a **class**, the actual [objects are stored **in heap**][42] segment.
+
+![Array in memory](https://media.geeksforgeeks.org/wp-content/uploads/Arrays1.png)
+
+<br/>
+
+## Creating, Initializing, and Accessing an Array
+#
+
+### **One-Dimensional Arrays:**
+The general form of a one-dimensional array declaration is:
+
+#### Syntax (both are valid declarations):
+```java
+Type varName[]; // C-Style
+```
+
+#### or:
+```java
+Type[] varName; // Java-Style
+```
+
+An array declaration has two components: the **type** and the **name**. *Type* declares *the element type* of the array. The element type determines the **data type of each element** that comprises the array. Like an array of integers, we can also create an array of other primitive data types like char, float, double, etc. or user-defined data types (objects of a class). Thus, the **element type** for the array determines **what type of data the array will hold**.
+
+#### Example:
+```java
+// ARRAYS OF PRIMITIVE DATA TYPES
+// numbers
+      byte[] byteArray;
+     short[] shortsArray;
+       int[] intArray;
+      long[] longArray;
+// floating point
+     float[] floatArray;
+    double[] doubleArray;
+// symbolic
+      char[] charArray;
+// boolean
+   boolean[] booleanArray;
+
+// ARRAYS OF NON-PRIMITIVE DATA TYPES (create by user)
+// classes (objects)
+   MyClass[] myClassArray;
+    Object[] objectArray;
+// collections (unknown type)
+Collection[] collectionArray;
+```
+
+Although the first declaration above establishes the fact that intArray is an array variable, **no actual array exists**. It merely tells the compiler that this variable (intArray) will hold an array of the integer type. To link intArray with an actual, physical array of integers, you must allocate one using **new** and assign it to intArray.
+
+<br/>
+
+## Instantiating an Array in Java
+#
+
+When an array is declared, only a reference of array is created. To actually create or give memory to array, you create an array like this:
+<br/>
+The general form of *new* as it applies to one-dimensional arrays appears as follows:
+
+#### Syntax:
+```java
+varName = new type [size];
+```
+
+Here is:
+* *"type"* specifies the type of data being allocated, 
+* *"size"* specifies the number of elements in the array,
+* *"varName"* is the name of array variable that is linked to the array, 
+* *"new"* to allocate an array, **you must specify** the **type** and **number of elements** to allocate**.
+
+#### Example:
+```java
+int[] intArray;                 // declaring array
+intArray = new int[20];         // allocating memory to array
+```
+
+#### or:
+```java
+int[] intArray = new int[20];   // combining both statements in one
+```
+
+> *Note:*
+>1. The elements in the array allocated by new will automatically be initialized to zero (for numeric types), false (for boolean), or null (for reference types).<br/>
+Refer [Default array values in Java][43]
+>2. Obtaining an array is a two-step process. First, you must declare a variable of the desired array type. Second, you must allocate the memory that will hold the array, using new, and assign it to the array variable. Thus, in Java **all arrays are dynamically allocated**.
+
+<br/>
+
+## Array Literal
+#
+
+In a situation, where the size of the array and variables of array are already known, array literals can be used.
+
+#### Example:
+```java
+int[] intArray = new int[]{ 1,2,3,4,5,6,7,8,9,10 }; // Declaring array literal
+```
+
+* The length of this array determines the length of the created array.
+* There is no need to write the new int[] part in the latest versions of Java
+
+<br/>
+
+## Accessing Java Array Elements using for Loop
+#
+
+Each element in the array is accessed via its index. The index *begins* with **"0"** and *ends* at **"(total array size) - 1"**. All the elements of array can be accessed using Java for Loop.
+
+#### Example:
+```java
+// accessing the elements of the specified array
+for ( int i = 0; i < arr.length; i++)
+    System.out.println(
+        "Element at index " + i + 
+                      " : " + arr[i]
+    );
+```
+
+#### Implementation:
+```java
+public class Array 
+{
+    public static void main (String[] args) 
+    {         
+      
+        int[] arr;          // declaring
+      
+        arr = new int[5];   // allocating memory
+
+        // initialization of array elements
+        arr[0] = 3;
+        arr[1] = 5;
+        arr[2] = 3;
+        arr[3] = 12;
+        arr[4] = 2;
+          
+        // accessing the elements of the specified array
+        for ( int i = 0;
+                  i < arr.length;
+                  i++)
+            System.out.println(
+                "Element at index " + i + 
+                              " : " + arr[i]    // Output: 3, 5, 3, 12, 2
+            );          
+    }
+}
+```
+
+You can also access java arrays using [foreach loops][28]
+
+![One-Dimensional Array](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-10.jpeg)
+
+<br>
+
+## Arrays of Objects
+#
+
+An array of objects is created just like an array of primitive type data items in the following way.
+
+#### Example:
+```java
+Student[] arr = new Student[7]; //student is a user-defined class
+```
+
+The studentArray contains seven memory spaces each of size of student class in which the address of seven Student objects can be stored. The *Student* objects have *to be instantiated using the constructor* of the Student class and their *references* should be *assigned* to the array elements in the following way.
+
+#### Example:
+```java
+Student[] arr = new Student[5];
+```
+
+#### Example:
+```java
+public class Student
+{
+    public int    roll_no;
+    public String name;
+
+    Student(int roll_no, String name)
+    {
+        this.roll_no = roll_no;
+        this.name    = name;
+    }
+}
+  
+// Elements of the array are objects of a class Student.
+public class Classmates
+{
+    public static void main (String... args)
+    {
+        Student[] arr;          // declarating
+  
+        arr = new Student[5];   // allocating memory
+  
+        // initialization of array elements
+        arr[0] = new Student(1,"John");
+        arr[1] = new Student(2,"Silvia");
+        arr[2] = new Student(3,"Frank");
+        arr[3] = new Student(4,"Domenik");
+        arr[4] = new Student(5,"Ann");
+  
+        // accessing the elements of the specified array
+        for (int i = 0; i < arr.length; i++)
+            System.out.println(                     // Output: Element at 0 : 1 John
+                "Element at " + i               +   // Output: Element at 1 : 2 Silvia
+                " : "         + arr[i].roll_no  +   // Output: Element at 2 : 3 Frank
+                " "           + arr[i].name         // Output: Element at 3 : 4 Domenik
+            );                                      // Output: Element at 4 : 5 Ann
+    }
+}
+```
+<br/>
+
+## Access to the element outside the array size
+#
+
+JVM throws **ArrayIndexOutOfBoundsException** to indicate that array has been accessed with an illegal index. The index is either negative or greater than or equal to size of array.
+
+#### Example:
+```java
+public class ArrayIndexOut
+{
+    public static void main (String... args)
+    {
+        int[] arr = new int[2];
+        arr[0] = 10;
+        arr[1] = 20;
+  
+        for ( int i = 0;
+                  i <= arr.length;      // Here is a mistake (maxIndex = maxLength - 1)
+                  i++)
+            System.out.println(arr[i]); // Output: 10, 20, ERROR -> OUT OF INDEX!!!
+    }
+}
+```
+Runtime error
+```bash
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 2 at ArrayIndexOut.main(File.java:12)
+```
+
+<br/>
+
+## Multi-Dimensional Arrays
+#
+
+Multi-dimensional **arrays are arrays** of arrays with each element of the array holding the reference of other array. These are also known as [Jagged Arrays][44]. A multidimensional array is created by appending one set of square brackets (**[]**) per dimension. 
+
+#### Examples:
+```java
+int[][]   intArray = new int[10][20];       //a 2D array or matrix
+int[][][] intArray = new int[10][20][10];   //a 3D array
+```
+
+#### Examples:
+```java
+public class MultiDimensionalArray
+{
+    public static void main(String... args)
+    {
+        int arr[][] = {             // Declaring and initializing 2D array
+                {2, 7, 9},
+                {3, 6, 1},
+                {7, 4, 2}
+            };
+  
+        
+        for ( int i = 0;            // Display 2D array
+                  i < 3;
+                  i++)
+        {
+            for ( int j = 0;
+                      j < 3;
+                      j++)
+                System.out.print(
+                    arr[i][j] + " " // output: 2 7 9 , 3 6 1 , 7 4 2
+                );
+  
+            System.out.println();
+        }
+    }
+}
+```
+
+Schema:
+
+![Multi-Dimensional Array](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-13.jpeg)
+
+<br/>
+
+## Passing Arrays to Methods
+#
+
+Like variables, we can also pass arrays to methods.
+
+#### Example:
+```java
+public class PassArrayToMethod
+{    
+    public static void main(String... args) 
+    {
+        int arr[] = {7, 3, 10, 71, 25};
+ 
+        sum(arr);                               // passing syntax
+    }
+  
+    public static void sum(int[] arr)           // getting syntax
+    {
+        int accum = 0;
+          
+        for ( int i = 0;
+                  i < arr.length;
+                  i++)
+            accum += arr[i];
+          
+        System.out.println(
+            "sum of array values : " + accum    // Output: 116
+        );
+    }
+}
+```
+
+<br/>
+
+## Returning Arrays from Methods
+#
+
+As usual, a method can also return an array. 
+
+#### Example:
+```java
+public class ReturnArrayFromMethod
+{    
+    public static void main(String... args) 
+    {
+        int arr[] = getArray();     // getting syntax
+ 
+        for ( int i = 0;
+                  i < arr.length;
+                  i++)
+            System.out.print(
+                arr[i] + " "        // Output: 7, 3, 10, 71, 25
+            );
+    }
+
+        
+    public static int[] getArray()  // return syntax              
+    {
+        return new int[]{7, 3, 10, 71, 25};
+    }
+}
+```
+
+<br/>
+
+## [Class][45] Objects for Arrays
+#
+
+Every array has an associated [Class][45] object, shared with all other arrays with the same component type.
+
+#### Example:
+```java
+public class Test
+{ 
+    public static void main(String... args) 
+    {
+           int[] intArray    = new int[3];
+          byte[] byteArray   = new byte[3];
+         short[] shortsArray = new short[3];
+        String[] strArray    = new String[3];
+          
+        System.out.println(
+            intArray.getClass()     // Output: class [I 
+        );
+
+        System.out.println(
+            intArray
+                .getClass()
+                .getSuperclass()    // Output: class java.lang.Object
+        );
+
+        System.out.println(
+            byteArray.getClass()    // Output: class [B
+        );
+
+        System.out.println(
+            shortsArray.getClass()  // Output: class [S
+        );
+
+        System.out.println(
+            strArray.getClass()     // Output: class [L java.lang.String;
+        );
+    }
+}
+```
+### *The result clarification:*
+Output: | Explanation of the runtime type signature:
+  ---: | :---
+*class [I* | signature for the class object **array with component type int**
+*class java.lang.Object* | The only direct superclass of any array type is [java.lang.Object][46] <- is the Class name. 
+*class [B* | signature for the class object **array with component type byte**
+*class [S* | signature for the class object **array with component type short**
+*class [L java.lang.String* | signature for the class object **array with component type of a Class**. Next is the Class name.
+
+
+<br/>
+
+## Array Members
+#
+
+Now as you know that arrays are object of a class and direct superclass of arrays is class [Object][47]. The members of an array type are all of the following:
+
+* The public final field length, which contains the number of components of the array. length may be positive or zero.
+* All the members inherited from class [Object][47]; the only method of Object that is not inherited is its [clone][48] method.
+* The public method **clone()**, which overrides clone method in class Object and throws no [checked exceptions][49].
+
+<br/>
+
+## Cloning of arrays
+#
+
+When you clone a single dimensional array, such as **Object[]**, a *"deep copy"* is performed with the new array containing copies of the original array’s elements as opposed to references.
+
+#### Example:
+```java
+public class ArrayClone
+{    
+    public static void main(String... args) 
+    {
+        int   intArray[] = { 1, 2, 3 };
+    /*
+        *********************************************
+        *             !!! IMPORTANT !!!             *
+        *                                           *
+        * The following statement doesn't create    *
+        * an exact copy ("Deep copy").              *
+        * It only copies items, but NOT REFERENCES! *
+        *                                           *
+        * If we try to compare the arrays,          *
+        * the result will be FALSE.                 *
+        *********************************************
+    */
+        int cloneArray[] = intArray.clone(); 
+          
+        System.out.println(
+            intArray == cloneArray  // Output: false
+        );
+          
+        for ( int i = 0;
+                  i < cloneArray.length;
+                  i++)
+            System.out.print(
+                cloneArray[i] + " " // Output: 1 2 3
+            );
+    }
+}
+```
+
+Clarification:
+
 
 [7]: https://www.geeksforgeeks.org/object-class-in-java/
 [8]: https://www.geeksforgeeks.org/serialization-in-java/
 [9]: https://www.geeksforgeeks.org/marker-interface-java/
+[42]: https://www.geeksforgeeks.org/g-fact-46/
+[43]: https://www.geeksforgeeks.org/default-array-values-in-java/
+[44]: https://www.geeksforgeeks.org/jagged-array-in-java/
+[45]: https://www.geeksforgeeks.org/java-lang-class-class-java-set-1/
+[46]: https://www.geeksforgeeks.org/object-class-in-java/
+[47]: https://www.geeksforgeeks.org/object-class-in-java/
+[48]: https://www.geeksforgeeks.org/clone-method-in-java-2/
+[49]: https://www.geeksforgeeks.org/checked-vs-unchecked-exceptions-in-java/
 
 ---
 <br/>
 
-
-## <p align=center><b>Loops</b></p>
-# 
+# <p align=center><b>Loops</b></p>
 
 Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true. <br/>
 Java provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.
 <br/>
 
-
 ## [WHILE loop][26]
+#
 A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be thought of as a repeating if statement.
 
-[26]: https://www.geeksforgeeks.org/java-while-loop-with-examples/
-
-Syntax:
+#### Syntax:
 ```java
 while (boolean condition)
 {
@@ -376,13 +817,14 @@ while (boolean condition)
 ```
 
 Flowchart:
+
 ![While Loop](https://media.geeksforgeeks.org/wp-content/uploads/Loop1.png)
 
 * While loop starts with the checking of condition. If it evaluated to true, then the loop body statements are executed otherwise first statement following the loop is executed. For this reason it is also called **Entry control loop**
 * Once the condition is evaluated to true, the statements in the loop body are executed. Normally the statements contain an update value for the variable being processed for the next iteration.
 * When the condition becomes false, the loop terminates which marks the end of its life cycle.
 
-Example:
+#### Example:
 ```java
 public class WhileLoop
 {
@@ -403,14 +845,12 @@ public class WhileLoop
 ```
 <br/>
 
-
 ## [FOR Loop][27]
+#
 
 A for loop provides a concise way of writing the loop structure. Unlike a while loop, a for statement consumes the initialization, condition and increment/decrement in one line thereby providing a shorter, easy to debug structure of looping.
 
-[27]: https://www.geeksforgeeks.org/java-for-loop-with-examples/
-
-Syntax:
+#### Syntax:
 ```java
 for ( initialization condition;
       testing condition;
@@ -421,7 +861,9 @@ for ( initialization condition;
 ```
 
 Flowchart:
+
 ![For Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop2.png)
+
 
 1. **Initialization condition:** Here, we initialize the variable in use. It marks the start of a for loop. An already declared variable can be used or a variable can be declared, local to loop only.
 2. **Testing Condition:** It is used for testing the exit condition for a loop. It must return a boolean value. It is also an *Entry Control Loop* as the condition is checked prior to the execution of the loop statements.
@@ -429,7 +871,7 @@ Flowchart:
 4. **Increment / Decrement:** It is used for updating the variable for next iteration.
 5. **Loop termination:** When the condition becomes false, the loop terminates marking the end of its life cycle.
 
-Example:
+#### Example:
 ```java
 public class ForLoop
 {
@@ -444,16 +886,18 @@ public class ForLoop
     }
 }
 ```
+<br/>
 
-**Enhanced FOR loop**
+## Enhanced FOR loop
+#
 
 Java also includes another version of FOR loop. Enhanced FOR loop provides a simpler way to **iterate through** *the elements of a **collection*** or ***array***. It is inflexible and should be used only when there is a need to iterate through the elements in sequential manner without knowing the index of currently processed element.<br/>
 Also note that the *object/variable* **is immutable** when enhanced for loop is used i.e it ensures that the values in the array can not be modified, so it can be said as read only loop where you can’t update the values as opposite to other loops where values can be modified.<br/>
 We recommend using this form of the for statement instead of the general form whenever possible.(as per JAVA doc.)
 
-Syntax:
+#### Syntax:
 ```java
-for (T element:Collection obj/array)
+for (T element : Collection obj/array)
 {
    ... statement(s) ...
 }
@@ -461,7 +905,7 @@ for (T element:Collection obj/array)
 
 Lets take an example to demonstrate how enhanced for loop can be used to simpify the work. Suppose there is an array of names and we want to print all the names in that array. Let’s see the difference with these two examples.
 
-Example:
+#### Example:
 ```java
 public class EnhancedForLoop
 {
@@ -488,9 +932,10 @@ public class EnhancedForLoop
     }
 }
 ```
-
+<br>
 
 ## [FOR-EACH Loop][28]
+#
 
 A For-each is another array traversing technique like for loop, while loop, do-while loop introduced in Java5. 
  
@@ -499,17 +944,15 @@ A For-each is another array traversing technique like for loop, while loop, do-w
 * In the loop body, you can use the loop variable you created rather than using an indexed array element. 
 * It’s commonly used to iterate over an array or a Collections class (eg, ArrayList)
 
-[28]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/
-
-
-Syntax:
+#### Syntax:
 ```java
 for (T var : array) 
 { 
     ... statement(s) using var;
 }
 ```
-Is equivalent to:
+
+#### Is equivalent to:
 ```java
 for ( int i = 0; 
           i < arr.length;
@@ -521,7 +964,7 @@ for ( int i = 0;
 }
 ```
 
-Example:
+#### Example:
 ```java
 public class ForEachLoop    
 {
@@ -559,18 +1002,20 @@ public class ForEachLoop
     }
 }
 ```
+<br/>
 
-## Limitations of FOR-EACH loop 
+## Limitations of FOR-EACH loop
+#
 
 1. For-each loops **arn't appropriate when you want to modify the array**:
 ```java
 for (int num : marks) 
 {
-    // only changes num, NOT THE ARRAY ELEMENT
-    num = num * 2; 
+    num = num * 2; // only changes num, NOT THE ELEMENTS!
 }
 ```
-2. For-each loops **don't keep track of index**. So we can not obtain array index using For-Each loop 
+
+2. For-each loops **don't keep track of index**. So we can not obtain array index using For-Each loop
 ```java
 for (int num : numbers) 
 { 
@@ -580,6 +1025,7 @@ for (int num : numbers)
     }
 }
 ```
+
 3. For-each **only iterates forward over the array in single steps**
 ```java
 // CAN'T BE CONVERTED TO A FOR-EACH loop
@@ -684,15 +1130,12 @@ public class PerformanceOverhead
 ```
 <br/>
 
-
 ## [DO-WHILE Loop][28]
+#
 
 A do while loop is similar to while loop with only difference that it checks for condition after executing the statements, and therefore is an example of Exit Control Loop.
 
-[28]: https://www.geeksforgeeks.org/java-do-while-loop-with-examples/
-
-
-Syntax:
+#### Syntax:
 ```java
 do
 {
@@ -701,7 +1144,7 @@ do
 while (boolean condition);
 ```
 
-Flowchart:
+#### Flowchart:
 ![Do-While Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop3.png)
 
 1. do while loop starts with the execution of the statement(s). There is no checking of any condition for the first time.
@@ -709,7 +1152,7 @@ Flowchart:
 3. When the condition becomes false, the loop terminates which marks the end of its life cycle.
 4. It is important to note that the do-while loop will execute its statements atleast once before any condition is checked, and therefore is an example of exit control loop.
 
-Example:
+#### Example:
 ```java
 public class DoWhileLoop
 {
@@ -731,12 +1174,12 @@ public class DoWhileLoop
 ```
 <br/>
 
-
-**Pitfalls of Loops**
+## Pitfalls of Loops
+#
 
 1. **Infinite loop:** One of the most common mistakes while implementing any sort of looping is that that it may not ever exit, that is the loop runs for infinite time. This happens when the condition fails for some reason.
    
-Two examples of INFINITE LOOP:
+#### Two examples of INFINITE LOOP:
 ```java
 public class PitfallLoop
 {
@@ -765,21 +1208,21 @@ public class PitfallLoop
 
 2. **Another pitfall** is that you might be adding something into you collection object through loop and you can run out of memory. If you try and execute the below program, after some time, out of memory exception will be thrown.
 
-Example:
+#### Example:
 ```java
 import java.util.ArrayList;
 
-public class Integer1
+public class MyInteger
 {
     public static void main(String... args)
     {
-        ArrayList<Integer> ar = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
 
         for ( int i = 0;
                   i < Integer.MAX_VALUE;
                   i++)
         {
-            ar.add(i); // Output: ERROR: OUT OF MEMORY (CAN'T REACH THE MAXIMUM VALUE !!!)
+            list.add(i); // Output: ERROR: OUT OF MEMORY (CAN'T REACH THE MAXIMUM VALUE !!!)
 
             // Every time a NEW item is ADDED.
             
@@ -787,12 +1230,15 @@ public class Integer1
     }
 }
 ```
+[26]: https://www.geeksforgeeks.org/java-while-loop-with-examples/
+[27]: https://www.geeksforgeeks.org/java-for-loop-with-examples/
+[28]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/
+[28]: https://www.geeksforgeeks.org/java-do-while-loop-with-examples/
 ---
 <br/>
 
 
-## <p align=center><b>Operators</b></p>
-# 
+# <p align=center><b>Operators</b></p>
 
 Java provides many types of operators which can be used according to the need. They are classified based on the functionality they provide.<br/>
 
@@ -804,25 +1250,16 @@ Some of the types are:
 5. [Logical Operators][19]
 6. [Ternary Operator][20]
 7. [Bitwise Operators][21]
-8. [Shift Operators][22]
-9. [instance of operator][23]
-10. [Precedence and Associativity][24]
-11. [Interesting Questions][25]
+8. [Shift Operators][21]
+9. [Instance of operators][23]
+10. [Precedence and Associativity][21]
 
-[15]: https://www.geeksforgeeks.org/java-arithmetic-operators-with-examples/
-[16]: https://www.geeksforgeeks.org/java-unary-operator-with-examples/
-[17]: https://www.geeksforgeeks.org/java-assignment-operator-with-examples/
-[18]: https://www.geeksforgeeks.org/java-relational-operators-with-examples/
-[19]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
-[20]: https://www.geeksforgeeks.org/java-ternary-operator-with-examples/
-[21]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
-[22]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
-[23]: https://www.geeksforgeeks.org/java-instanceof-and-its-applications/
-[24]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
-[25]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
+<br/>
 
+## Arithmetic Operators
+#
 
-**Arithmetic Operators:** They are used to perform simple arithmetic operations on primitive data types.
+They are used to perform simple arithmetic operations on primitive data types.
 
 Symbol | Operator 
   ---: | :---
@@ -833,8 +1270,10 @@ Symbol | Operator
 –      | Subtraction
 <br/>
 
+## Unary Operators
+#
 
-**Unary Operators:** Unary operators need only one operand. They are used to increment, decrement or negate a value.
+Unary operators need only one operand. They are used to increment, decrement or negate a value.
 
 Symbol | Operator 
   ---: | :---
@@ -845,26 +1284,30 @@ Symbol | Operator
 !      | **Logical NOT operator**, used for inverting a boolean value.
 <br/>
 
+## Assignment Operator
+#
 
-**Assignment Operator:** The operator is used to assign a value to any variable. It has a right to left associativity, i.e value given on right hand side of operator is assigned to the variable on the left and therefore right hand side value must be declared before using it or should be a constant.
+The operator is used to assign a value to any variable. It has a right to left associativity, i.e value given on right hand side of operator is assigned to the variable on the left and therefore right hand side value must be declared before using it or should be a constant.
 
 Symbol | Operator 
   ---: | :---
 =      | Assignment operator
-<br/>
 
-General format of assignment:
+#### Syntax:
 ```java
 variable = value;
 ```
+
 In many cases assignment operator can be combined with other operators to build a shorter version of statement called Compound Statement.
 <br/>
 
-For example:
+#### Example:
 ```java
-// instead of
 a = a + 5;
-// we can use
+```
+
+#### or:
+```java
 a += 5;
 ```
 
@@ -877,15 +1320,18 @@ Symbol | Operator
 %=     | **assigning modulo of left operand** with right operand and then assigning it to variable on the left.
 <br/>
 
+## Relational Operators
+#
 
-**Relational Operators:** These operators are used to check for relations like equality, greater than, less than. They return boolean result after the comparison and are extensively used in looping statements as well as conditional if else statements.
+These operators are used to check for relations like equality, greater than, less than. They return boolean result after the comparison and are extensively used in looping statements as well as conditional if else statements.
 
-General format is: 
-```
+#### Syntax: 
+```java
 variable relationOperator value
 ```
 
 Some of the relational operators are:
+
 Symbol | Operator 
   ---: | :--- 
 ==     | **Equal to:** returns true if left hand side is equal to right hand side.
@@ -896,27 +1342,32 @@ Symbol | Operator
 \>=    | **Greater than or equal to:** returns true if left hand side is greater than or equal to right hand side.
 <br/>
 
+## Logical Operators
+#
 
-**Logical Operators:** These operators are used to perform “logical AND” and “logical OR” operation, i.e. the function similar to AND gate and OR gate in digital electronics. One thing to keep in mind is the second condition is not evaluated if the first one is false, i.e. it has a short-circuiting effect. Used extensively to test for several conditions for making a decision.
+These operators are used to perform *"logical AND"* and *"logical OR"* operation, i.e. the function similar to AND gate and OR gate in digital electronics. One thing to keep in mind is the second condition is not evaluated if the first one is false, i.e. it has a short-circuiting effect. Used extensively to test for several conditions for making a decision.
 
 Conditional operators are:
+
 Symbol | Operator 
   ---: | :--- 
 &&     | **Logical AND:** returns true when both conditions are true.
 \|\|   | **Logical OR:** returns true if at least one condition is true.
 <br/>
 
+## Ternary operator
+#
 
-**Ternary operator:** Ternary operator is a shorthand version of *IF-ELSE statement*. It has three operands and hence the name ternary. 
+Ternary operator is a shorthand version of *IF-ELSE statement*. It has three operands and hence the name ternary. 
 
-General format is: 
-```
+#### Syntax: 
+```java
 condition ? if true : if false
 ```
 
 The above statement means that IF the condition evaluates to TRUE, then *execute* the statements *after* the **"?"** else *execute* the statements *after* the **":"**. 
 
-Example:
+#### Example:
 ```java
 public class TernaryOperators
 {
@@ -935,15 +1386,17 @@ public class TernaryOperators
         );
         
         System.out.println(
-            "Max of three numbers is: " + result    // Output: 30
+            "Max of three numbers is: " +result    // Output: 30
         );
     }
 }
 ```
 <br/>
 
+## Bitwise Operators
+#
 
-**Bitwise Operators:** These operators are used to perform manipulation of individual bits of a number. They can be used with any of the integer types. They are used when performing update and query operations of Binary indexed tree.
+These operators are used to perform manipulation of individual bits of a number. They can be used with any of the integer types. They are used when performing update and query operations of Binary indexed tree.
 
 Symbol | Operator 
   ---: | :--- 
@@ -953,19 +1406,23 @@ Symbol | Operator
 ~      | **Bitwise Complement Operator:** This is a unary operator which returns the one’s compliment representation of the input value, i.e. with all bits inversed.
 <br/>
 
+## Shift Operators
+#
 
-**Shift Operators:** These operators are used to shift the bits of a number left or right thereby multiplying or dividing the number by two respectively. They can be used when we have to multiply or divide a number by two. 
+These operators are used to shift the bits of a number left or right thereby multiplying or dividing the number by two respectively. They can be used when we have to multiply or divide a number by two. 
 
-General format is: 
-```
+#### Syntax: 
+```java
 number shiftOperator numberOfPlacesToShift;
 ```
-Example: 
+
+#### Example: 
 ```java
 number << 1; // Each step multiply the value of 2 (the same as: number *= 2;)
 
 number >> 4; // Each step divide the value of 2   (the same as: number := 8;)
 ```
+
 Symbol | Operator 
   ---: | :--- 
 <<     | **Left shift operator:** shifts the bits of the number to the left and fills 0 on voids left as a result. Similar effect as of multiplying the number with some power of two.
@@ -973,16 +1430,19 @@ Symbol | Operator
 \>\>\> | **Unsigned Right shift operator:** shifts the bits of the number to the right and fills 0 on voids left as a result. The leftmost bit is set to 0.
 <br/>
 
+## Instance of operator
+#
 
-**Instance of operator:** Instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface.
+Instance of operator is used for type checking. It can be used to test if an object is an instance of a class, a subclass or an interface.
 
-General format is: 
+#### Syntax: 
 ```java
 object instanceof class/subclass/interface
 ```
-Example:
+
+#### Example:
 ```java
-class InstanceOperators
+public class InstanceOperators
 {
     public static void main(String... args)
     {
@@ -1031,8 +1491,8 @@ interface MyInterface
 ```
 <br/>
 
-
-**Precedence and Associativity of Operators**
+## Precedence and Associativity of Operators
+#
 
 Precedence and associative rules are used when dealing with hybrid equations involving more than one type of operator. In such cases, these rules determine which part of the equation to consider first as there can be many different valuations for the same equation. The below table depicts the precedence of operators in decreasing order as magnitude with the top representing the highest precedence and bottom shows the lowest precedence.
 
@@ -1040,12 +1500,12 @@ Precedence and associative rules are used when dealing with hybrid equations inv
 
 <br/>
 
+## Precedence and Associativity
+#
 
-**Interesting Questions on Operators**
+There is often a confusion when it comes to hybrid equations that is equations having multiple operators. The problem is which part to solve first. There is a golden rule to follow in these situations. If the operators have different precedence, solve the higher precedence first. If they have same precedence, solve according to associativity, that is either from right to left or from left to right. Explanation of below program is well written in comments withing the program itself.
 
-**Precedence and Associativity:** There is often a confusion when it comes to hybrid equations that is equations having multiple operators. The problem is which part to solve first. There is a golden rule to follow in these situations. If the operators have different precedence, solve the higher precedence first. If they have same precedence, solve according to associativity, that is either from right to left or from left to right. Explanation of below program is well written in comments withing the program itself.
-
-Example:
+#### Example:
 ```java
 public class PrecAndAssociatRules
 {
@@ -1083,16 +1543,16 @@ public class PrecAndAssociatRules
 ```
 <br/>
 
+## Be a Compiler
+#
 
-**Be a Compiler:** Compiler in our systems uses lex tool to match the greatest match when generating tokens. This creates a bit of a problem if overlooked.
-<br/>
-*For example*, consider the statement **A=B+++C;**, to many of the readers this might seem to create compiler error. But this statement is absolutely correct as the token created by lex are **A**, **=**, **B**, **++**, **+**, **C**.
-<br/>
-*Therefore* this statement has a similar effect of ***first assigning* B + C *to* A** and ***then incrementing* B**.
-<br/>
-*Similarly*, **A=B+++++C;** would generate error as tokens generated are **A**, **=**, **B**, **++**, **++**, **+**, **C** which IS actually AN ERROR as **there is no operand after second unary operand**. 
+Compiler in our systems uses lex tool to match the greatest match when generating tokens. This creates a bit of a problem if overlooked.
 
-Example:
+* *For example*, consider the statement **A=B+++C;**, to many of the readers this might seem to create compiler error. But this statement is absolutely correct as the token created by lex are **A**, **=**, **B**, **++**, **+**, **C**.
+* *Therefore* this statement has a similar effect of ***first assigning* B + C *to* A** and ***then incrementing* B**.
+* *Similarly*, **A=B+++++C;** would generate error as tokens generated are **A**, **=**, **B**, **++**, **++**, **+**, **C** which IS actually AN ERROR as **there is no operand after second unary operand**. 
+
+#### Example:
 ```java
 public class operators
 {
@@ -1101,11 +1561,16 @@ public class operators
         int a = 20,
             b = 10,
             c = 0;
- 
-        // A=B+++C is compiled as B++ +C
-        // First  step: B + C = 10 + 0 = 10
-        // Second step: A = result(B+C) = 10
-        // Third  step: B = B + 1 = 10 + 1 = 11
+    
+    /*
+        *********************************************
+        *       A=B+++C is compiled as B++ +C       *
+        *                                           *
+        * First  step:  B + C = 10 + 0 = 10         *
+        * Second step:  A = result(B+C) = 10        *
+        * Third  step:  B = B + 1 = 10 + 1 = 11     *
+        *********************************************
+    */
 
         System.out.println(
             "The result of:"   +     "\n\t" +
@@ -1113,22 +1578,31 @@ public class operators
             "B = (B + 1) is: " + b + "\n\t" +   // Output: 11
             "C is: "           + c              // Output: 0
         );
- 
-        // A=B+++++C is compiled as  B++ ++ +C which GIVES ERROR!
-        // Uncommente the line below to check this
+
+    /*
+        *********************************************
+        * A=B+++++C is compiled as  B++ ++ +C       *
+        *           which GIVES ERROR!              *
+        *                                           *
+        * Uncommente the line below to check this   *
+        *********************************************
+    */
 
         // System.out.println(b+++++c);
+
     }
 }
 ```
 <br/>
 
+## *Using* **"+"** *over the* **"( )"**
+#
 
-**Using + over ():** When *using **+** operator inside system.out.println()* make sure to do addition using parenthesis.
+When *using **+** operator inside system.out.println()* make sure to do addition using parenthesis.
 <br/>
 If we write something before doing addition, then string addition takes place, that is associativity of addition is left to right and hence integers are added to a string first producing a string, and string objects concatenate when using +, therefore it can create unwanted results. 
 
-Example:
+#### Example:
 ```java
 public class AdditionAndConcatenation
 {
@@ -1137,33 +1611,48 @@ public class AdditionAndConcatenation
  
         int x = 5,
             y = 8;
- 
-        // A line will be printed, then added 5 and then 8 (no spaces),
-        // which will be concatenated into the next line:
-        // "Concatenation (X + Y) = 58"
+    
+    /*
+        *****************************************************
+        * A line will be printed, then added 5 and then 8   *
+        * (without spaces), which will be concatenated      *
+        * into the next line:                               *
+        *                                                   *
+        *       "Concatenation (X + Y) = 58"                *
+        *****************************************************
+    */
+
         System.out.println(
-            "Concatenation (X + Y) = "  + x + y
-        );  // Output: 58
+            "Concatenation (X + Y) = "  + x + y     // Output: 58
+        );
  
         System.out.println(
-            "Addition (X + Y) = "       + (x + y)
-        );   // Output: 13
+            "Addition (X + Y) = "       + (x + y)   // Output: 13
+        );
     }
 }
 ```
+
+[15]: https://www.geeksforgeeks.org/java-arithmetic-operators-with-examples/
+[16]: https://www.geeksforgeeks.org/java-unary-operator-with-examples/
+[17]: https://www.geeksforgeeks.org/java-assignment-operator-with-examples/
+[18]: https://www.geeksforgeeks.org/java-relational-operators-with-examples/
+[19]: https://www.geeksforgeeks.org/java-logical-operators-with-examples/
+[20]: https://www.geeksforgeeks.org/java-ternary-operator-with-examples/
+[21]: https://www.geeksforgeeks.org/operators-in-java/?ref=lbp
+[23]: https://www.geeksforgeeks.org/java-instanceof-and-its-applications/
 ---
 <br/>
 
 
-## <p align=center><b>IF-ELSE operator (Decision maker)</b></p>
-# 
+# <p align=center><b>IF-ELSE</b> (Decision maker)</p>
 
 Decision Making in programming is similar to decision making in real life. In programming also we face some situations where we want a certain block of code to be executed when some condition is fulfilled.
 <br/>
 A programming language uses control statements to control the flow of execution of program based on certain conditions. These  are used to cause the flow of execution to advance and branch based on changes to the state of a program.
 <br/>
 
-**Java’s Selection statements:**
+### Java’s Selection statements:
 * [if][30]
 * [if-else][31]
 * [nested-if][32]
@@ -1171,42 +1660,39 @@ A programming language uses control statements to control the flow of execution 
 * [switch-case][34]
 * [jump][35] – break, continue, return
 
-[30]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if
-[31]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if-else
-[32]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#nested-if
-[33]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if-else-if
-[34]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#switch-case
-[35]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#jump
-
 These statements allow you to control the flow of your program’s execution based upon conditions known only during run time.
+<br/>
 
-[**IF:**][36] The statement is the most simple decision making statement. It is used to decide whether a certain statement or block of statements will be executed or not i.e if a certain condition is true then a block of statement is executed otherwise not.
+## [**IF**][30]
+#
 
-[36]: https://www.geeksforgeeks.org/java-if-statement-with-examples/
+The statement is the most simple decision making statement. It is used to decide whether a certain statement or block of statements will be executed or not i.e if a certain condition is true then a block of statement is executed otherwise not.
 
-Syntax:
+#### Syntax:
 ```java
-if(boolean condition) 
+if (boolean condition) 
 {
    // Execute statements when condition is TRUE
 }
 ```
+
 Here, **condition** after evaluation will be either TRUE or FALSE.
 <br/>
 if statement accepts boolean values – if the value is TRUE then it will execute the block of statements under it.
 <br/>
 If we don't provide the *curly braces* **"{"** and **"}"** after **if(***...condition...***)** then by default if statement will consider the immediate **one statement** to be inside its block.
 
-Example,
+#### Example,
 ```java
 if(condition)
    statement1;  // Execute the statement1 ONLY when condition is TRUE
    statement2;
 ```
-Flowchart:
+
+#### Flowchart:
 ![IF](https://media.geeksforgeeks.org/wp-content/uploads/if.png)
 
-Example:
+#### Example:
 ```java
 public class IfDecisionMaker
 {
@@ -1216,25 +1702,25 @@ public class IfDecisionMaker
   
         if (i > 15)
             System.out.println(
-                "10 is less than 15" // Output: ...nothing...
+                "10 is less than 15"    // Output: ...nothing...
             );
   
         System.out.println(
-            "I am Not in if"  // Output: I am Not in if
+            "I am Not in if"            // Output: I am Not in if
         );
     }
 }
 ```
 <br/>
 
+## [IF-ELSE][37]
+#
 
-[**IF-ELSE:**][37] The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the else statement. We can use the else statement with if statement to execute a block of code when the condition is false.
+The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the else statement. We can use the else statement with if statement to execute a block of code when the condition is false.
 
-[37]: https://www.geeksforgeeks.org/java-if-else-statement-with-examples/
-
-Syntax:
+#### Syntax:
 ```java
-if(boolean condition) 
+if (boolean condition) 
 {
    ... statement(s) ... // Execute when condition is TRUE
 }
@@ -1244,10 +1730,11 @@ else
 }
 }
 ```
-Flowchart:
+
+### Flowchart:
 ![IF-ELSE](https://media.geeksforgeeks.org/wp-content/uploads/if-else.png)
 
-Example:
+#### Example:
 ```java
 class IfElse
 {
@@ -1268,24 +1755,27 @@ class IfElse
 ```
 <br/>
 
+## [NESTED-IF][32]
+#
 
-[**NESTED-IF:**][32] A nested if is an if statement that is the target of another if or else. Nested if statements means an if statement inside an if statement. Yes, java allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement.
+A nested if is an if statement that is the target of another if or else. Nested if statements means an if statement inside an if statement. Yes, java allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement.
 
-Syntax:
+#### Syntax:
 ```java
 if(boolean condition) 
 {
-   ... statement(s) ... // Execute when condition is TRUE
+   ... statement(s) ...     // Execute when condition is TRUE
    if (boolean condition2) 
    {
-      ... statement(s) ... // Executes when condition2 is TRUE
+      ... statement(s) ...  // Executes when condition2 is TRUE
    }
 }
 ```
-Flowchart:
+
+### Flowchart:
 ![NESTED-IF](https://media.geeksforgeeks.org/wp-content/uploads/nested-if-modified-1.png)
 
-Example:
+#### Example:
 ```java
 public class NestedIf
 {
@@ -1315,12 +1805,12 @@ public class NestedIf
 ```
 <br/>
 
+## [IF-ELSE-IF Ladder][38]
+#
 
-[**IF-ELSE-IF Ladder:**][38] Here, a user can decide among multiple options.The if statements are executed from the top down. As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the ladder is bypassed. If none of the conditions is true, then the final else statement will be executed.
+Here, a user can decide among multiple options.The if statements are executed from the top down. As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the ladder is bypassed. If none of the conditions is true, then the final else statement will be executed.
 
-[38]: https://www.geeksforgeeks.org/java-if-else-if-ladder-with-examples/
-
-Syntax:
+#### Syntax:
 ```java
 if(boolean condition) 
 {
@@ -1345,10 +1835,11 @@ else
     ... statement(s) ...
 }
 ```
-Flowchart:
+
+### Flowchart:
 ![IF-ELSE-IF Ladder](https://media.geeksforgeeks.org/wp-content/uploads/if-elseif.png)
 
-Example:
+#### Example:
 ```java
 public class IfElseIf
 {
@@ -1357,39 +1848,48 @@ public class IfElseIf
         int num = 20;
   
         if (num == 10)
-            System.out.println("Num is 10");    // Output: ... noting ...
+            System.out.println(
+                "Num is 10"             // Output: ... noting ...
+            );
         else if (num == 15)
-            System.out.println("Num is 15");
-        else if (num == 20)    // Output: ... noting ...
-            System.out.println("Num is 20");    // Output: Num is 20
+            System.out.println(
+                "Num is 15"             // Output: ... noting ...
+            );
+        else if (num == 20)
+            System.out.println(
+                "Num is 20"             // Output: Num is 20
+            );
         else
-            System.out.println("Num is not present");    // Output: ... noting ...
+            System.out.println(
+                "Num is not present"    // Output: ... noting ...
+            );
     }
 }
 ```
 <br/>
 
+## [JUMPERS][39]
+#
 
-[**JUMP:**][39] Java supports three jump statement: **break**, **continue** and **return**. These three statements transfer control to other part of the program.
+Java supports three jump statement: **break**, **continue** and **return**. These three statements transfer control to other part of the program.
 1. [Break:][40] In Java, break is majorly used for:
 * Terminate a sequence in a switch statement (discussed above).
 * To exit a loop.
 * Used as a “civilized” form of goto.
+
 <br/>
 
-[39]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#jump
-[40]: https://www.geeksforgeeks.org/break-statement-in-java/
-
-<p align=center><b>Using break to exit a Loop</b></p>
+## Using break to exit a Loop
+#
 
 Using break, we can force immediate termination of a loop, bypassing the conditional expression and any remaining code in the body of the loop.
 <br/>
 *Note:* Break, when used inside a set of nested loops, will only break out of the innermost
 
-Flowchart:
+### Flowchart:
 ![BREAK](https://media.geeksforgeeks.org/wp-content/uploads/exit.png)
 
-Example:
+#### Example:
 ```java
 public class BreakLoop
 {
@@ -1415,11 +1915,12 @@ public class BreakLoop
 ```
 <br/>
 
-<p align=center><i>Using break</i> as a <b>Form of Goto</b></p>
+## Using **break as** a Form of **Goto**
+#
 
 Java **doesn't have a goto** statement because *it provides a way to branch in an arbitrary and unstructured manner*. Java uses label. A **Label** is use to **identifies a block of code**.
 
-Syntax:
+#### Syntax:
 ```java
 label:
 {
@@ -1434,14 +1935,14 @@ label:
 
 Now, **break** statement *can be use to jump out of target block*.
 <br/>
-*Note:* You can't break to any label which is not defined for an enclosing block.
+> *Note:* You can't break to any label which is not defined for an enclosing block.
 
-Syntax:
+#### Syntax:
 ```java
 break label;
 ```
 
-Example:
+#### Example:
 ```java
 public class BreakLabe
 {
@@ -1486,10 +1987,10 @@ public class BreakLabe
 2. **Continue:** Sometimes it is useful to force an early iteration of a loop. That is, you might want to continue running the loop but stop processing the remainder of the code in its body for this particular iteration. This is, in effect, a goto just past the body of the loop, to the loop’s end. The continue statement performs such an action.
 <br/>
 
-Flowchart:
+### Flowchart:
 ![CONTINUE](https://media.geeksforgeeks.org/wp-content/uploads/continue-1.png)
 
-Example:
+#### Example:
 ```java
 public class Continue
 {
@@ -1517,9 +2018,7 @@ public class Continue
 3. [**Return:**][41] The return statement is used to explicitly return from a method. That is, it causes a program control to transfer back to the caller of the method.
 <br/>
 
-[41]: https://www.geeksforgeeks.org/return-keyword-java/
-
-Example:
+#### Example:
 ```java
 public class Return
 {
@@ -1540,20 +2039,27 @@ public class Return
     }
 }
 ```
-<br/>
+
+[37]: https://www.geeksforgeeks.org/java-if-else-statement-with-examples/
+[32]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#nested-if
+[30]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#if
+[38]: https://www.geeksforgeeks.org/java-if-else-if-ladder-with-examples/
+[39]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#jump
+[40]: https://www.geeksforgeeks.org/break-statement-in-java/
+[41]: https://www.geeksforgeeks.org/return-keyword-java/
 
 ---
 <br/>
 
 
-## <p align=center><b>Switch operator</b></p>
-# 
+# <p align=center><b>Switch operator</b></p>
 
-[**SWITCH-CASE:**][39] The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+## [SWITCH-CASE][39]
+#
 
-[39]: https://www.geeksforgeeks.org/switch-statement-in-java/
+The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
 
-Syntax:
+#### Syntax:
 ```java
 switch (expression)
 {
@@ -1580,10 +2086,10 @@ switch (expression)
 * The **break** statement is used inside the switch to terminate a statement sequence.
 * The **break** statement **is optional**. If omitted, execution will continue on into the next case.
 
-Flowchart:
+### Flowchart:
 ![SWITCH-CASE](https://media.geeksforgeeks.org/wp-content/uploads/switch-case.png)
 
-Example:
+#### Example:
 ```java
 public class SwitchCase
 {
@@ -1618,4 +2124,5 @@ public class SwitchCase
     }
 }
 ```
-<br/>
+
+[39]: https://www.geeksforgeeks.org/switch-statement-in-java/
