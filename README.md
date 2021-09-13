@@ -264,7 +264,6 @@ But java uses the Unicode system not the ASCII code system and to represent Unic
 ***Unicode** defines a fully international character set that can represent most of the world’s written languages. It is a unification of dozens of character sets, such as Latin, Greeks, Cyrillic, Katakana, Arabic, and many more.*
 
 ---
-<br/>
 
 [1]: https://en.wikipedia.org/wiki/IEEE_floating_point
 [2]: http://docs.oracle.com/javase/1.5.0/docs/api/java/math/BigDecimal.html
@@ -283,10 +282,10 @@ The **Reference Data Types** will contain a memory address of variable value bec
 [6]: https://github.com/yoricsv/004.1_JCOIP_.git
 
 * [**String:**][4] Strings are defined as an array of characters. The difference between a character array and a string in Java is, the string is designed to hold a sequence of characters in a single variable whereas, a character array is a collection of separate char type entities.
-* Unlike C/C++, Java strings are not terminated with a null character.
+* Unlike C/C++, Java strings are not terminated with a *null* character.
 Below is the basic syntax for declaring a string in Java programming language.
 
-Basic syntax for declaring a string
+Syntax:
 ```java
 <StringType> <stringName> = “<stringSequence>”;
 ```
@@ -302,7 +301,7 @@ Example *(with memory allocation on the heap)*:
 // Declare String using new operator 
 String str = new String("Hello, world!"); 
 ```
-* [Class:][10] A class is a user-defined blueprint or prototype from which objects are created.  It represents the set of properties or methods that are common to all objects of one type. In general, class declarations can include these components, in order: 
+* [**Class:**][10] A class is a user-defined blueprint or prototype from which objects are created.  It represents the set of properties or methods that are common to all objects of one type. In general, class declarations can include these components, in order: 
    1. **Modifiers:** A class can be public or has default access (Refer [*this*][11] for details).
    2. **Class name:** The name should begin with a initial letter (capitalized by convention).
    3. **Superclass (*if any*):** The name of the class’s parent (superclass), if any, preceded by the keyword extends. A class can only extend (subclass) one parent.
@@ -1370,9 +1369,177 @@ public class IfElseIf
 <br/>
 
 
+[**JUMP:**][39] Java supports three jump statement: **break**, **continue** and **return**. These three statements transfer control to other part of the program.
+1. [Break:][40] In Java, break is majorly used for:
+* Terminate a sequence in a switch statement (discussed above).
+* To exit a loop.
+* Used as a “civilized” form of goto.
+<br/>
+
+[39]: https://www.geeksforgeeks.org/decision-making-javaif-else-switch-break-continue-jump/?ref=lbp#jump
+[40]: https://www.geeksforgeeks.org/break-statement-in-java/
+
+<p align=center><b>Using break to exit a Loop</b></p>
+
+Using break, we can force immediate termination of a loop, bypassing the conditional expression and any remaining code in the body of the loop.
+<br/>
+*Note:* Break, when used inside a set of nested loops, will only break out of the innermost
+
+Flowchart:
+![BREAK](https://media.geeksforgeeks.org/wp-content/uploads/exit.png)
+
+Example:
+```java
+public class BreakLoop
+{
+    public static void main(String... args)
+    {
+        for ( int i = 0;
+                  i < 10;
+                  i++)
+        {
+            if (i == 5)
+                break;                  // terminate loop when i is 5.
+  
+            System.out.println(
+                "Value of I is: " + i   // Output: 0, 1, 2, 3, 4
+            );
+        }
+
+        System.out.println(
+            "Loop complete."            // Output: Loop complete.
+        );
+    }
+}
+```
+<br/>
+
+<p align=center><i>Using break</i> as a <b>Form of Goto</b></p>
+
+Java **doesn't have a goto** statement because *it provides a way to branch in an arbitrary and unstructured manner*. Java uses label. A **Label** is use to **identifies a block of code**.
+
+Syntax:
+```java
+label:
+{
+    ... statement(s)_1... ;
+    ... statement(s)_2... ;
+        
+    // ... several statement blocks ...
+
+    ... statement(s)_N... ;
+}
+```
+
+Now, **break** statement *can be use to jump out of target block*.
+<br/>
+*Note:* You can't break to any label which is not defined for an enclosing block.
+
+Syntax:
+```java
+break label;
+```
+
+Example:
+```java
+public class BreakLabe
+{
+    public static void main(String... args)
+    {
+        boolean terminate = true;
+         
+        first:
+        {
+            second: // ILLEGAL: The label SECOND ISN'T INTRODUCED YET;
+            {
+                third:
+                {
+                    System.out.println(
+                        "Before the break statement"    // Output: Before the break statement
+                    );
+
+                    if (terminate)
+                        break second; // BREAK will take the control out of SECOND label
+                    
+                    System.out.println(
+                        "This will never be executed."  // Output: ... never be ...
+                    );
+                }
+
+                System.out.println(
+                    "This will never be executed."      // Output:  ... never be ...
+                );
+            }
+  
+            // IMPORTANT!!! HERE IS THE FIRST BLOCK
+            System.out.println(
+                "This is after second block."           // Output: This is after second block
+            );
+        }
+    }
+}
+```
+<br/>
 
 
+2. **Continue:** Sometimes it is useful to force an early iteration of a loop. That is, you might want to continue running the loop but stop processing the remainder of the code in its body for this particular iteration. This is, in effect, a goto just past the body of the loop, to the loop’s end. The continue statement performs such an action.
+<br/>
 
+Flowchart:
+![CONTINUE](https://media.geeksforgeeks.org/wp-content/uploads/continue-1.png)
+
+Example:
+```java
+public class Continue
+{
+    public static void main(String... args)
+    {
+        for ( int i = 0;
+                  i < 10;
+                  i++)
+        {
+            
+            if (i % 2 == 0)
+                continue; // All EVEN numbers are skipped
+  
+            // All ODD numbers will be printed
+            System.out.print(
+                i + " "     // Output: 1, 3, 5, 7, 9
+            );
+        }
+    }
+}
+```
+<br/>
+
+
+3. [**Return:**][41] The return statement is used to explicitly return from a method. That is, it causes a program control to transfer back to the caller of the method.
+<br/>
+
+[41]: https://www.geeksforgeeks.org/return-keyword-java/
+
+Example:
+```java
+public class Return
+{
+    public static void main(String... args)
+    {
+        boolean terminator = true;
+
+        System.out.println(
+            "Before the return."    // Output: Before the return
+        );
+      
+        if (terminator) // If TRUE, bypass every statement  
+            return;     // after, until the end of the block 
+
+        System.out.println(
+            "This won't execute."   // Output: ... nothing ...
+        );
+    }
+}
+```
+<br/>
 
 ---
 <br/>
