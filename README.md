@@ -323,10 +323,11 @@ String str = new String("Hello, world!");
    * An Interface is about capabilities like a Player may be an interface and any class implementing Player must be able to (or must implement) move(). So it specifies a set of methods that the class has to implement.
    * If a class implements an interface and does not provide method bodies for all functions specified in the interface, then the class must be declared abstract.
    * A Java library example is, [*Comparator Interface*][14]. If a class implements this interface, then it can be used to sort a collection.
+---
 
 [13]: https://www.geeksforgeeks.org/interfaces-in-java/
 [14]: https://www.geeksforgeeks.org/comparator-interface-java/
----
+
 <br/>
 
 
