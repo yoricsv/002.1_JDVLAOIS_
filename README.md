@@ -1180,7 +1180,7 @@ A programming language uses control statements to control the flow of execution 
 
 These statements allow you to control the flow of your program’s execution based upon conditions known only during run time.
 
-[**if:**][36] The statement is the most simple decision making statement. It is used to decide whether a certain statement or block of statements will be executed or not i.e if a certain condition is true then a block of statement is executed otherwise not.
+[**IF:**][36] The statement is the most simple decision making statement. It is used to decide whether a certain statement or block of statements will be executed or not i.e if a certain condition is true then a block of statement is executed otherwise not.
 
 [36]: https://www.geeksforgeeks.org/java-if-statement-with-examples/
 
@@ -1228,7 +1228,7 @@ public class IfDecisionMaker
 <br/>
 
 
-[**if-else:**][37] The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the else statement. We can use the else statement with if statement to execute a block of code when the condition is false.
+[**IF-ELSE:**][37] The if statement alone tells us that if a condition is true it will execute a block of statements and if the condition is false it won’t. But what if we want to do something else if the condition is false. Here comes the else statement. We can use the else statement with if statement to execute a block of code when the condition is false.
 
 [37]: https://www.geeksforgeeks.org/java-if-else-statement-with-examples/
 
@@ -1269,7 +1269,7 @@ class IfElse
 <br/>
 
 
-[**nested-if:**][32] A nested if is an if statement that is the target of another if or else. Nested if statements means an if statement inside an if statement. Yes, java allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement.
+[**NESTED-IF:**][32] A nested if is an if statement that is the target of another if or else. Nested if statements means an if statement inside an if statement. Yes, java allows us to nest if statements within if statements. i.e, we can place an if statement inside another if statement.
 
 Syntax:
 ```java
@@ -1291,30 +1291,88 @@ public class NestedIf
 {
     public static void main(String... args)
     {
-        int i = 10;
+        int num = 10;
   
-        if (i == 10)
+        if (num == 10)
         {
-            if (i < 15)
+            // Will ONLY BE EXECUTED if statement ABOVE it is TRUE
+            if (num < 15)
                 System.out.println(
-                    "i is smaller than 15"
+                    "NUM is smaller than 15"            // Output: NUM is smaller than 15
                 );
   
-            // Nested - if statement
-            // Will only be executed if statement above
-            // it is true
-            if (i < 12)
+            if (num < 12)
                 System.out.println(
-                    "i is smaller than 12 too"
+                    "NUM is smaller than 12"            // Output: NUM is smaller than 12
                 );
             else
                 System.out.println(
-                    "i is greater than 15"
+                    "NUM is greater than 12 or Equal"   // Output: ... nothing ... 
                 );
         }
     }
 }
 ```
+<br/>
+
+
+[**IF-ELSE-IF Ladder:**][38] Here, a user can decide among multiple options.The if statements are executed from the top down. As soon as one of the conditions controlling the if is true, the statement associated with that if is executed, and the rest of the ladder is bypassed. If none of the conditions is true, then the final else statement will be executed.
+
+[38]: https://www.geeksforgeeks.org/java-if-else-if-ladder-with-examples/
+
+Syntax:
+```java
+if(boolean condition) 
+{
+   ... statement(s) ...
+}
+else
+   if (boolean condition2) 
+   {
+      ... statement(s) ...
+   }
+
+else
+   if (boolean condition3) 
+   {
+      ... statement(s) ... 
+   }
+
+// ... several else-if blocks ...
+
+else
+{
+    ... statement(s) ...
+}
+```
+Flowchart:
+![IF-ELSE-IF Ladder](https://media.geeksforgeeks.org/wp-content/uploads/if-elseif.png)
+
+Example:
+```java
+public class IfElseIf
+{
+    public static void main(String... args)
+    {
+        int num = 20;
+  
+        if (num == 10)
+            System.out.println("Num is 10");    // Output: ... noting ...
+        else if (num == 15)
+            System.out.println("Num is 15");
+        else if (num == 20)    // Output: ... noting ...
+            System.out.println("Num is 20");    // Output: Num is 20
+        else
+            System.out.println("Num is not present");    // Output: ... noting ...
+    }
+}
+```
+<br/>
+
+
+
+
+
 
 ---
 <br/>
@@ -1323,3 +1381,73 @@ public class NestedIf
 ## <p align=center><b>Switch operator</b></p>
 # 
 
+[**SWITCH-CASE:**][39] The switch statement is a multiway branch statement. It provides an easy way to dispatch execution to different parts of code based on the value of the expression.
+
+[39]: https://www.geeksforgeeks.org/switch-statement-in-java/
+
+Syntax:
+```java
+switch (expression)
+{
+    case value_1:
+        ... statement(s)_1... ;
+        break;
+    case value_2:
+        ... statement(s)_2... ;
+        break;
+
+    // ... several case blocks ...
+
+    case value_N:
+        ... statement(s)_N... ;
+        break;
+    default:
+        ... statement(s)_by_Default... ;
+}
+```
+
+* **Expression** can be of **type:** *byte*, *short*, *int*, *char* or an *enumeration*. *Beginning with JDK7*, **expression** can also be of **type** *String*.
+* **Dulplicate case** values are **NOT ALLOWED**.
+* The **default** statement **is optional**.
+* The **break** statement is used inside the switch to terminate a statement sequence.
+* The **break** statement **is optional**. If omitted, execution will continue on into the next case.
+
+Flowchart:
+![SWITCH-CASE](https://media.geeksforgeeks.org/wp-content/uploads/switch-case.png)
+
+Example:
+```java
+public class SwitchCase
+{
+    public static void main(String... args)
+    {
+        int expression = 9;
+        switch (expression)
+        {
+            case 0:
+                System.out.println(
+                    "Expression is zero."               // Output: ... noting ...
+                );
+                break;
+
+            case 1:
+                System.out.println(
+                    "Expression is one."                // Output: ... noting ...
+                );
+                break;
+
+            case 2:
+                System.out.println(
+                    "Expression is two."                // Output: ... noting ...
+                );
+                break;
+                
+            default:
+                System.out.println(
+                    "Expression is greater than 2."    // Output: Expression is greater than 2.
+                );
+        }
+    }
+}
+```
+<br/>
