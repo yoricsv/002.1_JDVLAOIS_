@@ -10,7 +10,7 @@ A variable is a name given to a memory location. It is the basic unit of storage
 
 ### The declaration of variables:
 
-![Variables](res/img/java-declare.jpeg)
+![Variables](../img/java-declare.jpeg)
 
 From the image, it can be easily perceived that while declaring a variable we need to take care of two things  that while de
 
