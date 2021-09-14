@@ -13,11 +13,11 @@ There is lots of information, I decided to split it into different MarkDown file
 * [SWITCH-CASE][7] *(Decision maker)*
 
 [1]: DataTypes.md
-[2]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Variables.md
-[3]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Loops.md
-[4]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Arrays.md
-[5]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Operators.md
-[6]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/IfElse.md
-[7]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/SwitchCase.md
+[2]: Variables.md
+[3]: Loops.md
+[4]: Arrays.md
+[5]: Operators.md
+[6]: IfElse.md
+[7]: SwitchCase.md
 ---
 <br/>
