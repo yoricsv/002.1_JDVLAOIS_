@@ -14,7 +14,7 @@ Array can contain primitives (*int*, *char* and etc.) as well as object (or non-
 <br/>In case of **primitive** data types, the actual values are stored **in contiguous memory** locations. 
 <br/>In case of objects of a **class**, the actual [objects are stored **in heap**][4] segment.
 
-![Array in memory](https://media.geeksforgeeks.org/wp-content/uploads/Arrays1.png)
+![Array in memory](res/img/Arrays1.png)
 
 <br/>
 
@@ -154,7 +154,7 @@ public class Array
 ```
 
 ### You can also access java arrays using [foreach loops][10]
-![One-Dimensional Array](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-10.jpeg)
+![One-Dimensional Array](res/img/Blank-Diagram-Page-1-10.jpeg)
 
 <br>
 
@@ -282,7 +282,7 @@ public class MultiDimensionalArray
 ```
 
 #### Schema:
-![Multi-Dimensional Array](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-13.jpeg)
+![Multi-Dimensional Array](res/img/Blank-Diagram-Page-1-13.jpeg)
 
 <br/>
 
@@ -444,7 +444,7 @@ public class ArrayClone
 ```
 
 ### Clarification:
-![Deep copy](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-11.jpeg)
+![Deep copy](res/img/Blank-Diagram-Page-1-11.jpeg)
 
 A clone of a multi-dimensional array (like Object[][]) is a “shallow copy” however, which is to say that it creates only a single new array with each element array a reference to an original element array, but subarrays are shared.
 
@@ -492,7 +492,7 @@ public class ArrayShallowCopy
 ```
 
 ### Clarification:
-![Shallow copy](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-12.jpeg)
+![Shallow copy](res/img/Blank-Diagram-Page-1-12.jpeg)
 
 ---
 <br/>
@@ -664,7 +664,7 @@ public class AccessinTwoDimencionArray
 **Representation of 2D array in Tabular Format**: A two–dimensional array can be seen as a table with **"x"** *rows* and **"y"** *columns* where the row number ranges from **0** to **(x - 1)** and column number ranges from **0** to **(y - 1)**. A two–dimensional array **"x"** with 3 rows and 3 columns is shown below:
 
 ### Clarification:
-![Two-Dimencion Array](https://media.geeksforgeeks.org/wp-content/uploads/two-d.png)
+![Two-Dimencion Array](res/img/two-d.png)
 
 <br/>
 
@@ -872,7 +872,7 @@ public class AccessingThreeDimencionArray
 **Representation of 3D array in Tabular Format**: A three–dimensional array can be seen as a table of array with **"x"** *rows* and **"y"** *columns* where the row number ranges from **0** to **(x - 1)** and column number ranges from **0** to **(y - 1)**. A three–dimensional array **"x"** with 3 rows and 3 columns is shown below:
 
 ### Clarification:
-![Three-Dimencion Array](https://media.geeksforgeeks.org/wp-content/uploads/3D-array.jpg)
+![Three-Dimencion Array](res/img/3D-array.jpg)
 
 <br/>
 
