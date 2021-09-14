@@ -178,7 +178,7 @@ Symbol | Operator
 ## Precedence and Associativity of Operators
 Precedence and associative rules are used when dealing with hybrid equations involving more than one type of operator. In such cases, these rules determine which part of the equation to consider first as there can be many different valuations for the same equation. The below table depicts the precedence of operators in decreasing order as magnitude with the top representing the highest precedence and bottom shows the lowest precedence.
 
-![Associativity](https://media.geeksforgeeks.org/wp-content/uploads/operators.png)
+![Associativity](res/img/operators.png)
 
 <br/>
 

@@ -31,7 +31,7 @@ switch (expression)
 * The **break** statement **is optional**. If omitted, execution will continue on into the next case.
 
 ### Flowchart:
-![SWITCH-CASE](https://media.geeksforgeeks.org/wp-content/uploads/switch-case.png)
+![SWITCH-CASE](res/img/switch-case.png)
 
 #### Example:
 ```java

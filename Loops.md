@@ -18,7 +18,7 @@ while (boolean condition)
 ```
 
 ### Flowchart:
-![While Loop](https://media.geeksforgeeks.org/wp-content/uploads/Loop1.png)
+![While Loop](res/img/Loop1.png)
 
 * While loop starts with the checking of condition. If it evaluated to true, then the loop body statements are executed otherwise first statement following the loop is executed. For this reason it is also called **Entry control loop**
 * Once the condition is evaluated to true, the statements in the loop body are executed. Normally the statements contain an update value for the variable being processed for the next iteration.
@@ -59,7 +59,7 @@ for ( initialization condition;
 ```
 
 ### Flowchart:
-![For Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop2.png)
+![For Loop](res/img/loop2.png)
 
 1. **Initialization condition:** Here, we initialize the variable in use. It marks the start of a for loop. An already declared variable can be used or a variable can be declared, local to loop only.
 2. **Testing Condition:** It is used for testing the exit condition for a loop. It must return a boolean value. It is also an *Entry Control Loop* as the condition is checked prior to the execution of the loop statements.
@@ -339,7 +339,7 @@ while (boolean condition);
 ```
 
 #### Flowchart:
-![Do-While Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop3.png)
+![Do-While Loop](res/img/loop3.png)
 
 1. do while loop starts with the execution of the statement(s). There is no checking of any condition for the first time.
 2. After the execution of the statements, and update of the variable value, the condition is checked for true or false value. If it is evaluated to true, next iteration of loop starts.

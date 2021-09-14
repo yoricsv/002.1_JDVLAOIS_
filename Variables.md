@@ -10,7 +10,7 @@ A variable is a name given to a memory location. It is the basic unit of storage
 
 ### The declaration of variables:
 
-![Variables](https://media.geeksforgeeks.org/wp-content/uploads/20191110223008/java-declare.jpeg)
+![Variables](res/img/java-declare.jpeg)
 
 From the image, it can be easily perceived that while declaring a variable we need to take care of two things  that while de
 
@@ -28,7 +28,7 @@ From the image, it can be easily perceived that while declaring a variable we ne
 * **variable_name:** Name given to the variable. 
 * **value:** It is the initial value stored in the variable.
 
-![Declaration](https://media.geeksforgeeks.org/wp-content/uploads/Variables-in-Java.png)
+![Declaration](res/img/Variables-in-Java.png)
 
 #### Examples:
 ```java

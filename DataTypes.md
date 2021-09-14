@@ -3,7 +3,7 @@
 Java is a **statically and strongly typed language** because these functions are inherited from C and C++.
 
 ### Data Types in Java:
-![Data types in Java](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105111644/Data-types-in-Java.jpg)
+![Data types in Java](res/img/Data-types-in-Java.jpg)
 
 <br/>
 
@@ -12,7 +12,7 @@ Java is a **statically and strongly typed language** because these functions are
 1. **Primitive Data Type**: such as *boolean, char, int, short, byte, long, float, and double*
 2. **Non-Primitive Data Type** or **Object Data type**: such as *String, Array and etc.*
 
-![Data types in Java](https://media.geeksforgeeks.org/wp-content/cdn-uploads/20191105122725/Primitive-Data-Types-in-Java-4.jpg)
+![Data types in Java](res/img/Primitive-Data-Types-in-Java-4.jpg)
 
 <br/>
 

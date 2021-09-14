@@ -41,7 +41,7 @@ if(condition)
 ```
 
 #### Flowchart:
-![IF](https://media.geeksforgeeks.org/wp-content/uploads/if.png)
+![IF](res/img/if.png)
 
 #### Example:
 ```java
@@ -81,7 +81,7 @@ else
 ```
 
 ### Flowchart:
-![IF-ELSE](https://media.geeksforgeeks.org/wp-content/uploads/if-else.png)
+![IF-ELSE](res/img/if-else.png)
 
 #### Example:
 ```java
@@ -120,7 +120,7 @@ if(boolean condition)
 ```
 
 ### Flowchart:
-![NESTED-IF](https://media.geeksforgeeks.org/wp-content/uploads/nested-if-modified-1.png)
+![NESTED-IF](res/img/nested-if-modified-1.png)
 
 #### Example:
 ```java
@@ -182,7 +182,7 @@ else
 ```
 
 ### Flowchart:
-![IF-ELSE-IF Ladder](https://media.geeksforgeeks.org/wp-content/uploads/if-elseif.png)
+![IF-ELSE-IF Ladder](res/img/if-elseif.png)
 
 #### Example:
 ```java
@@ -228,7 +228,7 @@ Using break, we can force immediate termination of a loop, bypassing the conditi
 *Note:* Break, when used inside a set of nested loops, will only break out of the innermost
 
 ### Flowchart:
-![BREAK](https://media.geeksforgeeks.org/wp-content/uploads/exit.png)
+![BREAK](res/img/exit.png)
 
 #### Example:
 ```java
@@ -326,7 +326,7 @@ public class BreakLabe
 <br/>
 
 ### Flowchart:
-![CONTINUE](https://media.geeksforgeeks.org/wp-content/uploads/continue-1.png)
+![CONTINUE](res/img/continue-1.png)
 
 #### Example:
 ```java
