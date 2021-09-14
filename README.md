@@ -12,12 +12,12 @@ There is lots of information, I decided to split it into different MarkDown file
 * [IF-ELSE][6] *(Decision maker)*
 * [SWITCH-CASE][7] *(Decision maker)*
 
-[1]: DataTypes.md
+[1]: res/read/DataTypes.md
 [2]: res/read/Variables.md
-[3]: Loops.md
-[4]: Arrays.md
-[5]: Operators.md
-[6]: IfElse.md
-[7]: SwitchCase.md
+[3]: res/read/Loops.md
+[4]: res/read/Arrays.md
+[5]: res/read/Operators.md
+[6]: res/read/IfElse.md
+[7]: res/read/SwitchCase.md
 ---
 <br/>
