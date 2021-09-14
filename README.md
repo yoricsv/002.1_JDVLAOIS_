@@ -12,7 +12,7 @@ There is lots of information, I decided to split it into different MarkDown file
 * [IF-ELSE][6] *(Decision maker)*
 * [SWITCH-CASE][7] *(Decision maker)*
 
-[1]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/DataTypes.md
+[1]: DataTypes.md
 [2]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Variables.md
 [3]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Loops.md
 [4]: https://github.com/yoricsv/002.1_JDVLAOIS_.git/Arrays.md
