@@ -247,8 +247,9 @@ for ( int i = 0;
 5.  For-each also has some **performance overhead** over simple iteration: 
 
 ```java
-import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
  
 public class PerformanceOverhead
 {
@@ -268,7 +269,9 @@ public class PerformanceOverhead
         startTime = Calendar.getInstance().getTimeInMillis();
 
         for (int i : list)
+        {
             int a = i;
+        }
 
         endTime   = Calendar.getInstance().getTimeInMillis();
 
@@ -283,7 +286,9 @@ public class PerformanceOverhead
         for ( int j = 0;
                   j < list.size();
                   j++)
+        {
             int a = list.get(j);
+        }
 
         endTime   = Calendar.getInstance().getTimeInMillis();
 
@@ -295,12 +300,14 @@ public class PerformanceOverhead
         // Type 3
         startTime = Calendar.getInstance().getTimeInMillis();
 
-         int size = list.size();
+        int size = list.size();
 
         for ( int j = 0;
                   j < size;
                   j++)
+        {
             int a = list.get(j);
+        }
 
         endTime   = Calendar.getInstance().getTimeInMillis();
 
@@ -314,7 +321,9 @@ public class PerformanceOverhead
         for( int j = list.size() - 1;
                  j >= 0;
                  j--)
+        {
             int a = list.get(j);
+        }
 
         endTime = Calendar.getInstance().getTimeInMillis();
 
