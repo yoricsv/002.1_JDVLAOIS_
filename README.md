@@ -13,7 +13,7 @@ There is lots of information, I decided to split it into different MarkDown file
 * [SWITCH-CASE][7] *(Decision maker)*
 
 [1]: DataTypes.md
-[2]: Variables.md
+[2]: res/read/Variables.md
 [3]: Loops.md
 [4]: Arrays.md
 [5]: Operators.md

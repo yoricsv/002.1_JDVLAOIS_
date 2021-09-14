@@ -28,7 +28,7 @@ From the image, it can be easily perceived that while declaring a variable we ne
 * **variable_name:** Name given to the variable. 
 * **value:** It is the initial value stored in the variable.
 
-![Declaration](res/img/Variables-in-Java.png)
+![Declaration](../img/Variables-in-Java.png)
 
 #### Examples:
 ```java
