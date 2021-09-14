@@ -726,7 +726,6 @@ Output: | Explanation of the runtime type signature:
 *class [S* | signature for the class object **array with component type short**
 *class [L java.lang.String* | signature for the class object **array with component type of a Class**. Next is the Class name.
 
-
 <br/>
 
 ## Array Members
@@ -780,8 +779,56 @@ public class ArrayClone
 }
 ```
 
-Clarification:
+### Clarification:
+![Deep copy](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-11.jpeg)
 
+A clone of a multi-dimensional array (like Object[][]) is a “shallow copy” however, which is to say that it creates only a single new array with each element array a reference to an original element array, but subarrays are shared.
+
+#### Example:
+```java
+public class ArrayShallowCopy
+{    
+    public static void main(String... args) 
+    {
+        int   intArray[][] = {
+                    {1,2,3},
+                    {4,5}
+                };
+          
+        int cloneArray[][] = intArray.clone();
+    /*
+        *********************************************
+        *             !!! IMPORTANT !!!             *
+        *                                           *
+        * The following statement doesn't create    *
+        * an exact copy ("Deep copy").              *
+        * It only copies items, but NOT REFERENCES! *
+        *                                           *
+        
+        // will print true as shallow copy is created i.e. sub-arrays are shared
+
+        * If we try to compare the arrays,          *
+        * the result will be FALSE.                 *
+        *********************************************
+    */      
+        System.out.println(
+            intArray == cloneArray  // Output: false
+        );
+          
+        
+        System.out.println(
+            intArray[0] == cloneArray[0]  // Output: true
+        );
+        System.out.println(
+            intArray[1] == cloneArray[1]  // Output: true
+        );
+          
+    }
+}
+```
+
+### Clarification:
+![Shallow copy](https://media.geeksforgeeks.org/wp-content/cdn-uploads/Blank-Diagram-Page-1-12.jpeg)
 
 [7]: https://www.geeksforgeeks.org/object-class-in-java/
 [8]: https://www.geeksforgeeks.org/serialization-in-java/
@@ -798,14 +845,588 @@ Clarification:
 ---
 <br/>
 
+# Multidimensional Arrays in Java
+
+Multidimensional Arrays can be defined in simple words as array of arrays. Data in multidimensional arrays are stored in tabular form (in row major order).
+
+#### Syntax:
+```java
+dataType[dimension_1st][dimension_2st]...[dimension_Nth] arrayName = new dataType[size_1][size_2]...[size_N];
+```
+
+Here is:
+* **dataType:** Type of data to be stored in the array. For example: int, char, etc.
+* **dimension:** The dimension of the array created.<br/>
+*For example:* 1D, 2D, etc.
+* **arrayName:** Name of the array
+* **size_1, size_2, ..., size_N:** Sizes of the dimensions respectively.
+
+#### Example:
+```java
+// Two-Dimensional array:
+int[][]     twoD_arr = new int[10][20];
+
+// Three-Dimensional array:
+int[][][] threeD_arr = new int[10][20][30];
+```
+
+**Size of multidimensional arrays:** The total number of elements that can be stored in a multidimensional array can be calculated by multiplying the size of all the dimensions.
+
+#### Example:
+```java
+// The Next array can store a total
+// of (10 * 20) = 200 elements.
+int[][] x = new int[10][20];
+
+// Similarly, the Next array can store
+// a total of (5 * 10 * 20) = 1000 elements.
+array int[][][] x = new int[5][10][20];
+```
+
+<br/>
+
+# Two–Dimensional Array *(2D-Array)*
+
+Two–Dimensional array is the simplest form of a multidimensional array. A two–dimensional array can be seen as an array of one – dimensional array for easier understanding.
+
+### Indirect Method of Declaration:
+
+#### Declaration – Syntax:
+```java
+// dataType[][] arrayName = new dataType[x][y];
+int[][] arr = new int[10][20];
+```
+
+#### Initialization – Syntax:
+```java
+// arrayName[indexRow][indexColumn] = value;
+arr[0][0] = 1;
+```
+
+#### Example:
+```java
+public class MultiDimensionalArrays
+{
+    public static void main(String... args)
+    {
+        int[][] arr = new int[10][20];
+        arr[0][0] = 1;
+  
+        System.out.println(
+            "arr[0][0] = " + arr[0][0]  // Output: 1
+        );
+    }
+}
+```
+
+Direct Method of Declaration:
+
+#### Syntax:
+```java
+/*
+    *********************************************************
+    * dataType[][] arrayName =                              *
+    *   {                                                   *
+    *       {value_R1_C1, value_R1_C2, ..., value_R1_CN},   *
+    *       {value_R2_C1, value_R2_C2, ..., value_R2_CN},   *
+    *                           ...                         *
+    *       {value_RN_C1, value_RN_C2, ..., value_RN_CN}    *
+    *   };                                                  *
+    *********************************************************
+*/
+
+int[][] arr =
+    {
+        {34, 5,   64, 122, 45},
+        {49, 62,  80, 3,   41},
+        {6,  254, 78, 22,  18}
+    };
+```
+
+#### Example:
+```java
+public class MultiDimensionalArrays
+{
+    public static void main(String[] args)
+    {
+  
+        int[][] arr =
+            {
+                { 1, 2 },
+                { 3, 4 }
+            };
+  
+        for ( int i = 0;
+                  i < 2;
+                  i++)
+            for ( int j = 0;
+                      j < 2;
+                      j++)
+                System.out.println(     // Output: arr[0][0] = 1
+                    "arr[" + i +        // Output: arr[0][1] = 2
+                    "]["   + j +        // Output: arr[1][0] = 3
+                    "] = " + arr[i][j]  // Output: arr[1][1] = 4
+                );
+    }
+}
+```
+
+<br/>
+
+## Accessing Elements of Two-Dimensional Arrays
+#
+
+Elements in two-dimensional arrays are commonly referred by **x\[i]\[j]** where **"i"** is the row number and **"j"** is the column number.
+
+#### Syntax:
+```java
+x[indexRow][indexColumn]
+```
+
+#### Example:
+```java
+int[][] arr = new int[10][20];
+arr[0][0] = 1;
+```
+
+The above example represents the element present in first row and first column.
+
+> *Note:* In arrays if size of array is N. It's index will be from **0** to **N-1**.<br/>
+> Therefore, for indexRow_2, actual row number is **2 + 1 = 3**.
+
+#### Example:
+```java
+public class AccessinTwoDimencionArray
+{
+    public static void main(String... args)
+    {
+  
+        int[][] arr =
+            {
+                { 1, 2 },
+                { 3, 4 }
+            };
+  
+        System.out.println(
+            "arr[0][0] = " + arr[0][0]  // Output: arr[0][0] = 1
+        );
+    }
+}
+```
+
+**Representation of 2D array in Tabular Format**: A two–dimensional array can be seen as a table with **"x"** *rows* and **"y"** *columns* where the row number ranges from **0** to **(x - 1)** and column number ranges from **0** to **(y - 1)**. A two–dimensional array **"x"** with 3 rows and 3 columns is shown below:
+
+### Clarification:
+![Two-Dimencion Array](https://media.geeksforgeeks.org/wp-content/uploads/two-d.png)
+
+<br/>
+
+## Print 2D array in tabular format:
+#
+
+To output all the elements of a Two-Dimensional array, use nested for loops. For this two for loops are required, One to traverse the rows and another to traverse columns.
+
+#### Example:
+```java
+public class AccessinTwoDimencionArray
+{
+    public static void main(String... args)
+    {
+  
+        int[][] arr =
+            {
+                { 1, 2 },
+                { 3, 4 }
+            };
+  
+        for ( int i = 0;
+                  i < 2;
+                  i++)
+        {
+            for ( int j = 0;
+                      j < 2;
+                      j++)
+            {
+                System.out.print(
+                    arr[i][j] + " "  // Output: 1, 2, 3, 4
+                );
+            }
+  
+            System.out.println();   // Output: \n
+        }
+    }
+}
+```
+
+<br/>
+
+# Three–Dimensional Array *(3D-Array)*
+
+Three–dimensional array is a complex form of a multidimensional array. A three–dimensional array can be seen as an array of two–dimensional array for easier understanding.
+
+### Indirect Method of Declaration:
+
+#### Declaration – Syntax:
+```java
+// dataType[][][] arrayName = new dataType[x][y][z];
+int[][][] arr = new int[10][20][30];
+```
+
+#### Initialization – Syntax:
+```java
+// arrayName[indexArray][indexRow][indexColumn] = value;
+arr[0][0][0] = 1;
+```
+
+#### Example:
+```java
+public class MultiDimensionalArrays
+{
+    public static void main(String... args)
+    {
+        int[][][] arr = new int[10][20][30];
+        arr[0][0][0] = 1;
+  
+        System.out.println(
+            "arr[0][0][0] = " + arr[0][0][0]  // Output: 1
+        );
+    }
+}
+```
+
+Direct Method of Declaration:
+
+#### Syntax:
+```java
+/*
+    *********************************************************************
+    * dataType[][][] arrayName =                                        *
+    *   {                                                               *
+    *       {                                                           *
+    *           {value_A1_R1_C1, value_A1_R1_C2, ..., value_A1_R1_CN},  *
+    *           {value_A1_R2_C1, value_A1_R2_C2, ..., value_A1_R2_CN},  *
+    *                                   ...                             *
+    *           {value_A1_RN_C1, value_A1_RN_C2, ..., value_A1_RN_CN},  *
+    *       },                                                          *
+    *       {                                                           *
+    *           {value_A2_R1_C1, value_A2_R1_C2, ..., value_A2_R1_CN},  *
+    *           {value_A2_R2_C1, value_A2_R2_C2, ..., value_A2_R2_CN},  *
+    *                                   ...                             *
+    *           {value_A2_RN_C1, value_A2_RN_C2, ..., value_A2_RN_CN},  *
+    *       },                                                          *
+    *                                                                   *
+    *                                   ...                             *
+    *                                                                   *
+    *       {                                                           *
+    *           {value_AN_R1_C1, value_AN_R1_C2, ..., value_AN_R1_CN},  *
+    *           {value_AN_R2_C1, value_AN_R2_C2, ..., value_AN_R2_CN},  *
+    *                                   ...                             *
+    *           {value_AN_RN_C1, value_AN_RN_C2, ..., value_AN_RN_CN},  *
+    *       }                                                           *
+    *   };                                                              *
+    *********************************************************************
+*/
+
+int[][][] arr =
+    {
+        {
+            {34,  5,   64,  122, 45},
+            {49,  62,  80,  3,   41},
+            {6,   254, 78,  22,  18}
+        },
+        {
+            {5,   10,  32,  7,   12},
+            {70,  6,   830, 9,   81},
+            {423, 64,  98,  3,   15}
+        }
+    };
+```
+
+#### Example:
+```java
+public class MultiDimensionalArrays
+{
+    public static void main(String[] args)
+    {
+  
+        int[][][] arr =
+            {
+                { 1, 2 },
+                { 3, 4 }
+            },
+            {
+                { 5, 6 },
+                { 7, 8 }
+            };
+  
+        for ( int i = 0;
+                  i < 2;
+                  i++)
+            for ( int j = 0;
+                      j < 2;
+                      j++)
+                for ( int k = 0;
+                          k < 2;
+                          k++)
+                System.out.println(         // Output: arr[0][0][0] = 1
+                    "arr[" + i +            // Output: arr[0][0][1] = 2
+                    "]["   + j +            // Output: arr[0][1][0] = 3
+                    "]["   + k +            // Output: arr[0][1][1] = 4
+                    "] = " + arr[i][j][z]   // Output: arr[1][0][0] = 5
+                                            // Output: arr[1][0][1] = 6
+                                            // Output: arr[1][1][0] = 7
+                                            // Output: arr[1][1][1] = 8
+                );
+    }
+}
+```
+
+<br/>
+
+## Accessing Elements of Three-Dimensional Arrays
+#
+
+Elements in Three-dimensional arrays are commonly referred by **x\[i]\[j]\[k]** where **"i"** is the array number, **"j"** is the row number and **"k"** is the column number.
+
+#### Syntax:
+```java
+x[indexArray][indexRow][indexColumn]
+```
+
+#### Example:
+```java
+int[][][] arr = new int[10][20][30];
+arr[0][0][0] = 1;
+```
+
+The above example represents the element present in the first row and first column of the first array in the declared 3D array.
+
+> *Note:* In arrays if size of array is N. It's index will be from **0** to **N-1**.<br/>
+> Therefore, for indexRow_2, actual row number is **2 + 1 = 3**.
+
+#### Example:
+```java
+public class AccessingThreeDimencionArray
+{
+    public static void main(String... args)
+    {
+  
+        int[][][] arr =
+            {
+                { 1, 2 },
+                { 3, 4 }
+            },
+            {
+                { 5, 6 },
+                { 7, 8 }
+            };
+  
+        System.out.println(
+            "arr[0][0][0] = " + arr[0][0][0]  // Output: arr[0][0][0] = 1
+        );
+    }
+}
+```
+
+**Representation of 3D array in Tabular Format**: A three–dimensional array can be seen as a table of array with **"x"** *rows* and **"y"** *columns* where the row number ranges from **0** to **(x - 1)** and column number ranges from **0** to **(y - 1)**. A three–dimensional array **"x"** with 3 rows and 3 columns is shown below:
+
+### Clarification:
+![Three-Dimencion Array](https://media.geeksforgeeks.org/wp-content/uploads/3D-array.jpg)
+
+<br/>
+
+## Print 3D array in tabular format:
+#
+
+To output all the elements of a Three-Dimensional array, use nested for loops. For this three for loops are required, One to traverse the arrays, second to traverse the rows and another to traverse columns.
+
+#### Example:
+```java
+public class AccessingThreeDimencionArray
+{
+    public static void main(String... args)
+    {
+  
+        int[][][] arr =
+            {
+                { 1, 2 },
+                { 3, 4 }
+            },
+            {
+                { 5, 6 },
+                { 7, 8 }
+            };
+  
+        for ( int i = 0;
+                  i < 2;
+                  i++)
+        {
+            for ( int j = 0;
+                      j < 2;
+                      j++)
+            {
+                for ( int k = 0;
+                          k < 2;
+                          k++)
+                {
+                    System.out.print(
+                        arr[i][j][k] + " "  // Output: 1, 2,
+                                            //         \n,
+                                            // Output: 3, 4
+                                            //         \n
+                                            //         \n
+                                            // Output: 5, 6,
+                                            //         \n
+                                            // Output: 7, 8
+                    );
+                }
+                System.out.println();       // Output: \n
+            }
+            System.out.println();           // Output: \n
+        }
+    }
+}
+```
+
+<br/>
+
+## Inserting a Multi-dimensional Array during Runtime:
+#
+
+This topic is forced n taking user-defined input into a multidimensional array during runtime. It is focused on the user first giving all the input to the program during runtime and after all entered input, the program will give output with respect to each input accordingly. It is useful when the user wishes to make input for multiple Test-Cases with multiple different values first and after all those things done, program will start providing output.
+
+As an example, let’s find the total number of even and odd numbers in an input array. Here, we will use the concept of a 2-dimensional array. Here are a few points that explain the use of the various elements in the upcoming code:
+
+* Row integer number is considered as the number of *Test-Cases* and *Column* values are considered as values in each Test-Case.
+* One **for()** loop is *used for updating Test-Case number* and **another for()** loop is *used for taking respective array values*.
+* As all input entry is done, again **two for()** loops are used in *the same manner to execute the program* according to the condition specified.
+* **The first line** of input is the *total number of TestCases*.
+* **The second line** shows the *total number of first array values*.
+* **The third line** gives *array values and so on*.
+
+#### Implementation:
+```java
+import java.util.Scanner;
+  
+public class MultiDimensionArrayTestCase
+{
+    public static void main(String... args)
+    {
+        Scanner scanner = new Scanner(System.in);       // To take values from console
+
+        int totalTestCases,                             // is a total number of TestCases
+            eachTestCaseValues;                         // is a values in each TestCase
+        
+        totalTestCases = scanner.nextInt();             // To takes total number of TestCases
+                                                        // INPUT: 2
+  
+        int[][] arrayMain = new int[totalTestCases][];  // is formed as row values for total testCases
+  
+        for ( int i = 0;
+                  i < arrayMain.length;
+                  i++)
+        {
+            eachTestCaseValues = scanner.nextInt();     // To take input of values in each TestCase
+/*
+    *****************************************************
+    * NOTE: define The NEXT ITERATION as symbol ("->")  *
+    *                                                   *
+    * INPUT: 2 -> 3                                     *
+    *****************************************************
+*/
+            arrayMain[i] = new int[eachTestCaseValues];
+            
+            for ( int j = 0;
+                      j < arrayMain[i].length;
+                      j++)
+
+                arrayMain[i][j] = scanner.nextInt();
+/*
+    *****************************************************
+    * INPUT: 1 -> 2                       (first loop)  *
+    * INPUT: 1 -> 2 -> 3                  (second loop) *
+    *****************************************************
+*/
+        }                                               // All input entry is done.
+
+
+        // START EXECUTING BY PROVIDED CONDITIONS
+        for ( int i = 0;
+                  i < arrayMain.length;
+                  i++)
+        {
+
+            int nEvenNumbers = 0,                       // Initialize of EVEN numbers to ZERO
+                nOddNumbers  = 0;                       // Initialize of ODD numbers to ZERO
+  
+            System.out.println(
+                "TestCase " + i +
+                " with "    + arrayMain[i].length +
+                " values:"
+            );
+/*
+    *****************************************************
+    * OUTPUT: TestCase 0 with 2 values:   (first loop)  *
+    * OUTPUT: TestCase 1 with 3 values:   (second loop) *
+    *****************************************************
+*/
+
+            for ( int j = 0;
+                      j < arrayMain[i].length;
+                      j++)
+            {
+                System.out.print(
+                    arrayMain[i][j] + " "
+                );
+/*
+    *****************************************************
+    * OUTPUT: 1 -> 2                      (first loop)  *
+    * OUTPUT: 1 -> 2 -> 3                 (second loop) *
+    *****************************************************
+*/
+                if (arrayMain[i][j] % 2 == 0)           // EVEN & ODD numbers counter
+                    nEvenNumbers++;
+                else
+                    nOddNumbers++;
+            }
+            System.out.println();
+/*
+    *****************************************************
+    * OUTPUT: \n                          (first loop)  *
+    * OUTPUT: \n                          (second loop) *
+    *****************************************************
+*/
+            System.out.println(
+                "Total Even numbers: \n" + nEvenNumbers +
+                "Total Odd numbers: "    + nOddNumbers
+            );
+/*
+    *****************************************************
+    * OUTPUT: Total Even numbers: 1       (first loop)  *
+    * OUTPUT: Total Odd numbers: 1        (first loop)  *
+    * OUTPUT: Total Even numbers: 1       (second loop) *
+    * OUTPUT: Total Odd numbers: 2        (second loop) *
+    *****************************************************
+*/
+        }
+    }
+}
+```
+
+---
+<br/>
+
 # <p align=center><b>Loops</b></p>
 
-Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true. <br/>
+Looping in programming languages is a feature which facilitates the execution of a set of instructions/functions repeatedly while some condition evaluates to true.
+<br/>
 Java provides three ways for executing the loops. While all the ways provide similar basic functionality, they differ in their syntax and condition checking time.
+
 <br/>
 
 ## [WHILE loop][26]
 #
+
 A while loop is a control flow statement that allows code to be executed repeatedly based on a given Boolean condition. The while loop can be thought of as a repeating if statement.
 
 #### Syntax:
@@ -816,8 +1437,7 @@ while (boolean condition)
 }
 ```
 
-Flowchart:
-
+### Flowchart:
 ![While Loop](https://media.geeksforgeeks.org/wp-content/uploads/Loop1.png)
 
 * While loop starts with the checking of condition. If it evaluated to true, then the loop body statements are executed otherwise first statement following the loop is executed. For this reason it is also called **Entry control loop**
@@ -860,10 +1480,8 @@ for ( initialization condition;
 }
 ```
 
-Flowchart:
-
+### Flowchart:
 ![For Loop](https://media.geeksforgeeks.org/wp-content/uploads/loop2.png)
-
 
 1. **Initialization condition:** Here, we initialize the variable in use. It marks the start of a for loop. An already declared variable can be used or a variable can be declared, local to loop only.
 2. **Testing Condition:** It is used for testing the exit condition for a loop. It must return a boolean value. It is also an *Entry Control Loop* as the condition is checked prior to the execution of the loop statements.
