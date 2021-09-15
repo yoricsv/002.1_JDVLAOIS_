@@ -20,5 +20,4 @@ There is lots of information, I decided to split it into different MarkDown file
 [5]: res/read/Operators.md
 [6]: res/read/IfElse.md
 [7]: res/read/SwitchCase.md
-
 <br/>
