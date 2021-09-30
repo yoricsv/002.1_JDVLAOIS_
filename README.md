@@ -11,6 +11,7 @@ There is lots of information, I decided to split it into different MarkDown file
 * [Arrays][4]
 * [IF-ELSE][6] *(Decision maker)*
 * [SWITCH-CASE][7] *(Decision maker)*
+---
 
 [1]: res/read/DataTypes.md
 [2]: res/read/Variables.md
@@ -19,5 +20,4 @@ There is lots of information, I decided to split it into different MarkDown file
 [5]: res/read/Operators.md
 [6]: res/read/IfElse.md
 [7]: res/read/SwitchCase.md
----
 <br/>
